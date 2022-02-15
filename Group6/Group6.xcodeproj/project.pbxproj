@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		850EE52027BC1D2400B89DDD /* ReportListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850EE51F27BC1D2400B89DDD /* ReportListView.swift */; };
+		850EE52227BC1D3000B89DDD /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850EE52127BC1D3000B89DDD /* ReportModel.swift */; };
 		85E8C07827B534AD00BB0B3C /* Group6App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8C07727B534AD00BB0B3C /* Group6App.swift */; };
 		85E8C07A27B534AD00BB0B3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8C07927B534AD00BB0B3C /* ContentView.swift */; };
 		85E8C07C27B534B000BB0B3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85E8C07B27B534B000BB0B3C /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		850EE51F27BC1D2400B89DDD /* ReportListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListView.swift; sourceTree = "<group>"; };
+		850EE52127BC1D3000B89DDD /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
 		85E8C07427B534AD00BB0B3C /* Group6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85E8C07727B534AD00BB0B3C /* Group6App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group6App.swift; sourceTree = "<group>"; };
 		85E8C07927B534AD00BB0B3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +75,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		850EE51D27BC1CC700B89DDD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				850EE52127BC1D3000B89DDD /* ReportModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		850EE51E27BC1CD000B89DDD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				850EE51F27BC1D2400B89DDD /* ReportListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		85E8C06B27B534AD00BB0B3C = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +114,8 @@
 		85E8C07627B534AD00BB0B3C /* Group6 */ = {
 			isa = PBXGroup;
 			children = (
+				850EE51E27BC1CD000B89DDD /* View */,
+				850EE51D27BC1CC700B89DDD /* Model */,
 				85E8C07727B534AD00BB0B3C /* Group6App.swift */,
 				85E8C07927B534AD00BB0B3C /* ContentView.swift */,
 				85E8C07B27B534B000BB0B3C /* Assets.xcassets */,
@@ -258,6 +280,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				85E8C07A27B534AD00BB0B3C /* ContentView.swift in Sources */,
+				850EE52227BC1D3000B89DDD /* ReportModel.swift in Sources */,
+				850EE52027BC1D2400B89DDD /* ReportListView.swift in Sources */,
 				85E8C07827B534AD00BB0B3C /* Group6App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
