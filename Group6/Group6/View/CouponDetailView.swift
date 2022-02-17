@@ -13,52 +13,56 @@ struct CouponDetailView: View {
     
     var body: some View {
         NavigationView {
-            Form {
-                Section(header: Text("title")) {
-                    Text("\(coupon.title)")
-                }
-                
-                Section(header: Text("description")) {
-                    Text("\(coupon.description)")
-                }
-                
-                Section {
-                    HStack {
-                        Text("Points Needed")
-                        Spacer()
-                        Text("\(coupon.cost) points")
+            VStack {
+                Form {
+                    Section(header: Text("title")) {
+                        Text("\(coupon.title)")
                     }
-                }
-                
-                Section(footer: HStack {
-                    Spacer()
-                    Button(action: {}) {
+                    
+                    Section(header: Text("description")) {
+                        Text("\(coupon.description)")
+                    }
+                    
+                    Section(header: Text("condition")){
                         HStack {
-                            Image(systemName: "cart.fill")
-                                .font(.title)
-                            Text("Redeem")
-                                .font(.title)
-                                .fontWeight(.semibold)
+                            Text("Points Needed")
+                            Spacer()
+                            Text("\(coupon.cost) points")
                         }
-                        .foregroundColor(.white)
-                        .frame(minWidth: 0, maxWidth: .infinity)
                     }
-                    .buttonStyle(.borderedProminent)
-                    Spacer()
+                    if !coupon.acquired {
+                        Section (footer:
+                                    HStack {
+                            Spacer()
+                            Button(action: {}) {
+                                HStack {
+                                    Image(systemName: "cart.fill")
+                                        .font(.body)
+                                    Text("Redeem")
+                                        .font(.body)
+                                        .fontWeight(.semibold)
+                                }
+                                .foregroundColor(.white)
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                            }
+                            .buttonStyle(.borderedProminent)
+                            Spacer()
+                        }) {
+                            EmptyView()
+                        }
+                    }
+                    
                 }
-                ) {
-                    EmptyView()
-                }
-                
             }
-            .navigationBarTitle("Coupon Details", displayMode: .inline)
+            .navigationTitle("Coupon Details")
         }
     }
 }
 
+
 struct CouponDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CouponDetailView(coupon: Coupon(title: "Apples Store", description: "This coupon is a 10% discount on apples", cost: 50))
+        CouponDetailView(coupon: Coupon(title: "Apples Store", description: "This coupon is a 10% discount on apples", cost: 50, acquired: true))
             .previewInterfaceOrientation(.portrait)
     }
 }

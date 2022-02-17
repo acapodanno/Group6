@@ -12,4 +12,5 @@ struct Coupon: Identifiable {
     let title: String
     let description: String
     let cost: Int
+    let acquired: Bool
 }

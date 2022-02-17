@@ -8,29 +8,34 @@
 import SwiftUI
 
 struct StoreView: View {
+    
     @State private var typeSelected = "Available Coupons"
-    var types = ["Available Coupons", "My coupons"]
+    var types = ["Available Coupons", "My Coupons"]
     
     @StateObject var couponStore = CouponStore()
     
     var body: some View {
         NavigationView {
-            Picker("What coupon do you need?", selection: $typeSelected) {
-                ForEach(types, id: \.self) {
-                    Text($0)
-                }
-            }
-            .pickerStyle(.segmented)
-        
-            List {
-                ForEach(couponStore.allCoupons) {ccoupon in
-                    NavigationLink(destination: {CouponDetailView(coupon: ccoupon)}) {
-                        CouponCell(coupon: ccoupon)
+            VStack {
+                Picker("What coupon do you need?", selection: $typeSelected) {
+                    ForEach(types, id: \.self) {
+                        Text($0)
                     }
                 }
+                .pickerStyle(.segmented)
+                
+                
+                List {
+                    ForEach(couponStore.allCoupons) {ccoupon in
+                        if typeSelected == "Available Coupons" && !ccoupon.acquired || typeSelected == "My Coupons" && ccoupon.acquired {
+                            NavigationLink(destination: {CouponDetailView(coupon: ccoupon)}) {
+                                CouponCell(coupon: ccoupon)
+                            }
+                        }
+                    }
+                }
+                .navigationTitle("Store")
             }
-            .navigationTitle("Store")
-            
         }
     }
 }
