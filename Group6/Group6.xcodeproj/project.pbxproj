@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2AA849DD27BC2351004B3936 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA849DC27BC2351004B3936 /* test.swift */; };
+		2AEDAABF27BEB9F600241E41 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDAABE27BEB9F600241E41 /* NotificationManager.swift */; };
+		2AEDAAC327BEC26700241E41 /* NotificationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDAAC227BEC26700241E41 /* NotificationTestView.swift */; };
+		2AEDAAC527BEC62D00241E41 /* NotificationTestTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDAAC427BEC62D00241E41 /* NotificationTestTargetView.swift */; };
 		850EE52027BC1D2400B89DDD /* ReportListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850EE51F27BC1D2400B89DDD /* ReportListView.swift */; };
 		850EE52227BC1D3000B89DDD /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850EE52127BC1D3000B89DDD /* ReportModel.swift */; };
 		85E8C07827B534AD00BB0B3C /* Group6App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8C07727B534AD00BB0B3C /* Group6App.swift */; };
@@ -38,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		2AA849DC27BC2351004B3936 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		2AEDAABE27BEB9F600241E41 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		2AEDAAC227BEC26700241E41 /* NotificationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTestView.swift; sourceTree = "<group>"; };
+		2AEDAAC427BEC62D00241E41 /* NotificationTestTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTestTargetView.swift; sourceTree = "<group>"; };
 		850EE51F27BC1D2400B89DDD /* ReportListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListView.swift; sourceTree = "<group>"; };
 		850EE52127BC1D3000B89DDD /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
 		85E8C07427B534AD00BB0B3C /* Group6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group6.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +87,9 @@
 			isa = PBXGroup;
 			children = (
 				2AA849DC27BC2351004B3936 /* test.swift */,
+				2AEDAABE27BEB9F600241E41 /* NotificationManager.swift */,
+				2AEDAAC227BEC26700241E41 /* NotificationTestView.swift */,
+				2AEDAAC427BEC62D00241E41 /* NotificationTestTargetView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -290,11 +299,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AEDAAC527BEC62D00241E41 /* NotificationTestTargetView.swift in Sources */,
+				2AEDAABF27BEB9F600241E41 /* NotificationManager.swift in Sources */,
 				85E8C07A27B534AD00BB0B3C /* ContentView.swift in Sources */,
 				850EE52227BC1D3000B89DDD /* ReportModel.swift in Sources */,
 				850EE52027BC1D2400B89DDD /* ReportListView.swift in Sources */,
 				2AA849DD27BC2351004B3936 /* test.swift in Sources */,
 				85E8C07827B534AD00BB0B3C /* Group6App.swift in Sources */,
+				2AEDAAC327BEC26700241E41 /* NotificationTestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
