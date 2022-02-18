@@ -1,31 +1,15 @@
+//
+//  ContentView.swift
+//  Group6
+//
+//  Created by Alessandro Capodanno on 10/02/22.
+//
 import SwiftUI
 
-struct ContentView: View
-{
-    var body: some View
-    {
-        TabView {
-            ReportListView()
-                .tabItem {
-                    Image(systemName: "megaphone.fill")
-                    Text("Reports")
-                }
-            MapView()
-                .tabItem {
-                    Image(systemName: "map.fill")
-                    Text("Map")
-                }
-            StoreView()
-                .tabItem {
-                    Image(systemName: "cart.fill")
-                    Text("Store")
-                }
-            ProfileView()
-                .tabItem {
-                    Image(systemName: "person.fill")
-                    Text("Profile")
-                }
-        }
+struct ContentView: View {
+    var body: some View {
+        Text("Hello, world!")
+            .padding()
     }
 }
 

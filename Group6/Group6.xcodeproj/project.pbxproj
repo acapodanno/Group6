@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A7F363927BFCDF700D3C4F2 /* TabNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F363827BFCDF700D3C4F2 /* TabNavigationView.swift */; };
 		2AA849E027BC251E004B3936 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA849DF27BC251E004B3936 /* LocationManager.swift */; };
 		2AA849E227BC2575004B3936 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA849E127BC2575004B3936 /* MapView.swift */; };
 		2AA849E427BC2A9C004B3936 /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA849E327BC2A9C004B3936 /* MapPoint.swift */; };
-		850EE52027BC1D2400B89DDD /* ReportListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850EE51F27BC1D2400B89DDD /* ReportListView.swift */; };
-		850EE52227BC1D3000B89DDD /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850EE52127BC1D3000B89DDD /* ReportModel.swift */; };
 		85E8C07827B534AD00BB0B3C /* Group6App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8C07727B534AD00BB0B3C /* Group6App.swift */; };
 		85E8C07A27B534AD00BB0B3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8C07927B534AD00BB0B3C /* ContentView.swift */; };
 		85E8C07C27B534B000BB0B3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85E8C07B27B534B000BB0B3C /* Assets.xcassets */; };
@@ -39,12 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A7F363827BFCDF700D3C4F2 /* TabNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigationView.swift; sourceTree = "<group>"; };
 		2AA849DE27BC2419004B3936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2AA849DF27BC251E004B3936 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2AA849E127BC2575004B3936 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		2AA849E327BC2A9C004B3936 /* MapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
-		850EE51F27BC1D2400B89DDD /* ReportListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListView.swift; sourceTree = "<group>"; };
-		850EE52127BC1D3000B89DDD /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
 		85E8C07427B534AD00BB0B3C /* Group6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85E8C07727B534AD00BB0B3C /* Group6App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group6App.swift; sourceTree = "<group>"; };
 		85E8C07927B534AD00BB0B3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				2AA849E327BC2A9C004B3936 /* MapPoint.swift */,
-				850EE52127BC1D3000B89DDD /* ReportModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -103,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				2AA849E127BC2575004B3936 /* MapView.swift */,
-				850EE51F27BC1D2400B89DDD /* ReportListView.swift */,
+				2A7F363827BFCDF700D3C4F2 /* TabNavigationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -301,9 +298,8 @@
 				85E8C07A27B534AD00BB0B3C /* ContentView.swift in Sources */,
 				2AA849E427BC2A9C004B3936 /* MapPoint.swift in Sources */,
 				2AA849E227BC2575004B3936 /* MapView.swift in Sources */,
-				850EE52227BC1D3000B89DDD /* ReportModel.swift in Sources */,
+				2A7F363927BFCDF700D3C4F2 /* TabNavigationView.swift in Sources */,
 				2AA849E027BC251E004B3936 /* LocationManager.swift in Sources */,
-				850EE52027BC1D2400B89DDD /* ReportListView.swift in Sources */,
 				85E8C07827B534AD00BB0B3C /* Group6App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
