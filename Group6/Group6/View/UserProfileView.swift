@@ -37,16 +37,6 @@ struct SettingsLabel : View {
     }
 }
 
-//bittone impostazioni
-struct Bottone : View {
-    var body : some View {
-        Button(action: {
-        }, label: {
-            Label("", systemImage: "gear")
-            
-        })
-    }
-}
 
 //ScrollView con tutti i badge
 struct BadgesList : View {
