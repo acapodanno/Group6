@@ -86,8 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				2AA849DF27BC251E004B3936 /* LocationManager.swift */,
-				2AA849E127BC2575004B3936 /* MapView.swift */,
-				2AA849E327BC2A9C004B3936 /* MapPoint.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -95,6 +93,7 @@
 		850EE51D27BC1CC700B89DDD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2AA849E327BC2A9C004B3936 /* MapPoint.swift */,
 				850EE52127BC1D3000B89DDD /* ReportModel.swift */,
 			);
 			path = Model;
@@ -103,6 +102,7 @@
 		850EE51E27BC1CD000B89DDD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2AA849E127BC2575004B3936 /* MapView.swift */,
 				850EE51F27BC1D2400B89DDD /* ReportListView.swift */,
 			);
 			path = View;
