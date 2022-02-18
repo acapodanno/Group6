@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CouponDetailView: View {
+    @State private var showingAlert = false
+    @State private var couponAcquired = false
     @EnvironmentObject var couponS: CouponStore
     var coupon: Coupon
     
@@ -34,7 +36,11 @@ struct CouponDetailView: View {
                         Section (footer:
                                     HStack {
                             Spacer()
-                            Button(action: {}) {
+                            Button(action: {
+                                showingAlert = true
+                                couponAcquired = true
+                                // TODO: AGGIUNGERE SALVATAGGIO DEL COUPON NELLA SEZIONE "MY COUPONS" CON MODELLO REST
+                            }) {
                                 HStack {
                                     Image(systemName: "cart.fill")
                                         .font(.body)
@@ -46,6 +52,10 @@ struct CouponDetailView: View {
                                 .frame(minWidth: 0, maxWidth: .infinity)
                             }
                             .buttonStyle(.borderedProminent)
+                            .disabled(couponAcquired == true)
+                            .alert(isPresented: $showingAlert) {
+                                Alert(title: Text("Purchase completed"), message: Text("You can find it in My Coupons section"), dismissButton: .default(Text("OK")))
+                                    }
                             Spacer()
                         }) {
                             EmptyView()
