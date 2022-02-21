@@ -37,6 +37,7 @@
 		97E0E71827C3FCE0006D12FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E0E71727C3FCE0006D12FE /* User.swift */; };
 		97E0E71A27C414EA006D12FE /* CouponModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E0E71927C414EA006D12FE /* CouponModel.swift */; };
 		97E0E71C27C41594006D12FE /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E0E71B27C41594006D12FE /* NotificationManager.swift */; };
+		97E0E71E27C41B61006D12FE /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E0E71D27C41B61006D12FE /* PhotoPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		97E0E71727C3FCE0006D12FE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		97E0E71927C414EA006D12FE /* CouponModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponModel.swift; sourceTree = "<group>"; };
 		97E0E71B27C41594006D12FE /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		97E0E71D27C41B61006D12FE /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				2AB7ECC027C01AF8006CD0EE /* NotificationTestTargetView.swift */,
 				2AB7ECC427C01AF8006CD0EE /* NotificationTestView.swift */,
 				97E0E71B27C41594006D12FE /* NotificationManager.swift */,
+				97E0E71D27C41B61006D12FE /* PhotoPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				2AB7ECBD27C01AE3006CD0EE /* StoreView.swift in Sources */,
 				97260EF027BF9D8600AF6FF9 /* UserProfileView.swift in Sources */,
 				2AB7ECC627C01AF8006CD0EE /* NotificationTestTargetView.swift in Sources */,
+				97E0E71E27C41B61006D12FE /* PhotoPicker.swift in Sources */,
 				85BC913127C3A5A40099CC2D /* FileApi.swift in Sources */,
 				85BC912F27C3A4060099CC2D /* ReportApi.swift in Sources */,
 				2AB7ECB927C01AC6006CD0EE /* ReportsListView.swift in Sources */,

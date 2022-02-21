@@ -10,6 +10,7 @@ import SwiftUI
 
 struct UserProfileView: View {
     @State var nomeUtente : String = "Genny"
+    @State var isPresented : Bool = false
     
     var body: some View {
         NavigationView{
@@ -24,7 +25,11 @@ struct UserProfileView: View {
                                     NavigationLink(
                                         destination: SettingsView(nomeUtente: $nomeUtente)) {
                 Label("", systemImage: "gear")
+                                            
             })
+            .sheet(isPresented: $isPresented) {
+                
+            }
         }
     }
 }
@@ -107,6 +112,7 @@ struct PointsIcon : View {
 
 //immagine di profilo
 struct ProfileImage : View {
+    var isPresented : Bool
     var body : some View {
         Image(systemName: "person.fill")
             .resizable()
@@ -116,6 +122,9 @@ struct ProfileImage : View {
             .overlay(Circle()
                         .stroke(Color.black, lineWidth: 4))
             .padding()
+            .onTapGesture {
+                isPresented = true
+            }
     }
 }
 
