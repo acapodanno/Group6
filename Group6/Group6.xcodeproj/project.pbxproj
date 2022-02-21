@@ -17,11 +17,9 @@
 		2AB7ECC627C01AF8006CD0EE /* NotificationTestTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC027C01AF8006CD0EE /* NotificationTestTargetView.swift */; };
 		2AB7ECC727C01AF8006CD0EE /* CouponStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC127C01AF8006CD0EE /* CouponStore.swift */; };
 		2AB7ECC827C01AF8006CD0EE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC227C01AF8006CD0EE /* Coordinator.swift */; };
-		2AB7ECC927C01AF8006CD0EE /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC327C01AF8006CD0EE /* NotificationManager.swift */; };
 		2AB7ECCA27C01AF8006CD0EE /* NotificationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC427C01AF8006CD0EE /* NotificationTestView.swift */; };
 		2AB7ECCB27C01AF8006CD0EE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC527C01AF8006CD0EE /* LocationManager.swift */; };
 		2AB7ECD127C01B3A006CD0EE /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECCE27C01B3A006CD0EE /* Report.swift */; };
-		2AB7ECD227C01B3A006CD0EE /* CouponModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECCF27C01B3A006CD0EE /* CouponModel.swift */; };
 		2AB7ECD327C01B3A006CD0EE /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECD027C01B3A006CD0EE /* MapPoint.swift */; };
 		85BC912F27C3A4060099CC2D /* ReportApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC912E27C3A4060099CC2D /* ReportApi.swift */; };
 		85BC913127C3A5A40099CC2D /* FileApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC913027C3A5A40099CC2D /* FileApi.swift */; };
@@ -37,6 +35,8 @@
 		97974BEE27C11DC4000AB965 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97974BED27C11DC4000AB965 /* SettingsView.swift */; };
 		97974BF027C13779000AB965 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97974BEF27C13779000AB965 /* TabBarView.swift */; };
 		97E0E71827C3FCE0006D12FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E0E71727C3FCE0006D12FE /* User.swift */; };
+		97E0E71A27C414EA006D12FE /* CouponModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E0E71927C414EA006D12FE /* CouponModel.swift */; };
+		97E0E71C27C41594006D12FE /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E0E71B27C41594006D12FE /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,11 +68,9 @@
 		2AB7ECC027C01AF8006CD0EE /* NotificationTestTargetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTestTargetView.swift; sourceTree = "<group>"; };
 		2AB7ECC127C01AF8006CD0EE /* CouponStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponStore.swift; sourceTree = "<group>"; };
 		2AB7ECC227C01AF8006CD0EE /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		2AB7ECC327C01AF8006CD0EE /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		2AB7ECC427C01AF8006CD0EE /* NotificationTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTestView.swift; sourceTree = "<group>"; };
 		2AB7ECC527C01AF8006CD0EE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2AB7ECCE27C01B3A006CD0EE /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
-		2AB7ECCF27C01B3A006CD0EE /* CouponModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponModel.swift; sourceTree = "<group>"; };
 		2AB7ECD027C01B3A006CD0EE /* MapPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
 		85BC912E27C3A4060099CC2D /* ReportApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportApi.swift; sourceTree = "<group>"; };
 		85BC913027C3A5A40099CC2D /* FileApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileApi.swift; sourceTree = "<group>"; };
@@ -91,6 +89,8 @@
 		97974BED27C11DC4000AB965 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		97974BEF27C13779000AB965 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		97E0E71727C3FCE0006D12FE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		97E0E71927C414EA006D12FE /* CouponModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponModel.swift; sourceTree = "<group>"; };
+		97E0E71B27C41594006D12FE /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,9 +124,9 @@
 				2AB7ECC227C01AF8006CD0EE /* Coordinator.swift */,
 				2AB7ECC127C01AF8006CD0EE /* CouponStore.swift */,
 				2AB7ECC527C01AF8006CD0EE /* LocationManager.swift */,
-				2AB7ECC327C01AF8006CD0EE /* NotificationManager.swift */,
 				2AB7ECC027C01AF8006CD0EE /* NotificationTestTargetView.swift */,
 				2AB7ECC427C01AF8006CD0EE /* NotificationTestView.swift */,
+				97E0E71B27C41594006D12FE /* NotificationManager.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -134,7 +134,7 @@
 		850EE51D27BC1CC700B89DDD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2AB7ECCF27C01B3A006CD0EE /* CouponModel.swift */,
+				97E0E71927C414EA006D12FE /* CouponModel.swift */,
 				2AB7ECD027C01B3A006CD0EE /* MapPoint.swift */,
 				2AB7ECCE27C01B3A006CD0EE /* Report.swift */,
 				97E0E71727C3FCE0006D12FE /* User.swift */,
@@ -392,15 +392,13 @@
 				2AB7ECCA27C01AF8006CD0EE /* NotificationTestView.swift in Sources */,
 				2AB7ECC827C01AF8006CD0EE /* Coordinator.swift in Sources */,
 				2AB7ECCB27C01AF8006CD0EE /* LocationManager.swift in Sources */,
-				2AB7ECD227C01B3A006CD0EE /* CouponModel.swift in Sources */,
-				2AB7ECC927C01AF8006CD0EE /* NotificationManager.swift in Sources */,
 				97974BF027C13779000AB965 /* TabBarView.swift in Sources */,
 				97E0E71827C3FCE0006D12FE /* User.swift in Sources */,
-				2AB7ECD227C01B3A006CD0EE /* CouponModel.swift in Sources */,
-				2AB7ECC927C01AF8006CD0EE /* NotificationManager.swift in Sources */,
+				97E0E71A27C414EA006D12FE /* CouponModel.swift in Sources */,
 				85BC913327C3A8080099CC2D /* ConfigUri.swift in Sources */,
 				2AB7ECC727C01AF8006CD0EE /* CouponStore.swift in Sources */,
 				2AB7ECB127C01AA9006CD0EE /* CouponDetailView.swift in Sources */,
+				97E0E71C27C41594006D12FE /* NotificationManager.swift in Sources */,
 				85E8C07827B534AD00BB0B3C /* Group6App.swift in Sources */,
 				97974BEE27C11DC4000AB965 /* SettingsView.swift in Sources */,
 			);
