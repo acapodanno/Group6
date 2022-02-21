@@ -25,7 +25,7 @@ struct TabNavigationView: View {
                     Image(systemName: "cart.fill")
                     Text("Store")
                 }
-            ProfileView()
+            UserProfileView()
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")
