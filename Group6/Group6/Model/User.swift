@@ -8,6 +8,7 @@
 // Questa struttura contiene tutti i dati relativi ad un utente
 
 import Foundation
+import UIKit
 
 struct User : Identifiable {
     var id = UUID()
@@ -15,9 +16,8 @@ struct User : Identifiable {
     var userName : String  //nome utente
     var level : Int  //livello
     var points : Int  //punti accumulati
+    var profileImage : UIImage  //immagine di profilo
     var cupons : [Coupon]  //cupon accumulati
     var reportings : [Report]  //report effettuati
-    //var badges : [Badge]  //badge accumulati
-    //?? immagine di profilo
-    
+    //TODO: var badges : [Badge]  //badge accumulati
 }
