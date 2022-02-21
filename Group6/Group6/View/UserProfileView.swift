@@ -11,24 +11,24 @@ import SwiftUI
 struct UserProfileView: View {
     @State var nomeUtente : String = "Genny"
     @State var isPresented : Bool = false
+    @State private var profileImage = UIImage(systemName: "user.fill")!
     
     var body: some View {
         NavigationView{
             Form {
-                ProfileBar(nomeUtente: nomeUtente)
+                ProfileBar(isPresented: $isPresented,
+                           nomeUtente: $nomeUtente,
+                           profileImage: $profileImage)
                 Section(header: Text("Badges").font(.title2)) {
                     BadgesList()
                 }
             }
             .navigationTitle(Text("Profile"))
-            .navigationBarItems(trailing:
-                                    NavigationLink(
-                                        destination: SettingsView(nomeUtente: $nomeUtente)) {
-                Label("", systemImage: "gear")
-                                            
-            })
+            .navigationBarItems(trailing: NavigationLink(
+                destination: SettingsView(nomeUtente: $nomeUtente)) {
+                    Label("", systemImage: "gear")})
             .sheet(isPresented: $isPresented) {
-                
+                PhotoPicker(profileImage: $profileImage) //crea un photoPicker
             }
         }
     }
@@ -36,11 +36,36 @@ struct UserProfileView: View {
 
 //COMPONENTI
 
-//label inpostazioni
-struct SettingsLabel : View {
+//Immagine, nome, livello e punti
+struct ProfileBar : View {
+    @Binding var isPresented : Bool
+    @Binding var nomeUtente : String
+    @Binding var profileImage : UIImage
+    
     var body : some View {
-        VStack {
-            Image(systemName: "gear")
+        HStack {
+            Image(uiImage: profileImage)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 120, height: 120)
+                .clipShape(Circle())
+                .overlay(Circle()
+                            .stroke(Color.black, lineWidth: 4))
+                .padding()
+                .onTapGesture {
+                    isPresented = true  //quando si clicca sull'immagine si apre lo sheet col picker
+                }
+            VStack {
+                Text(nomeUtente)
+                    .font(.title)
+                    .bold()
+                HStack(spacing: 15) {
+                    Text("Liv 8")
+                        .font(.title3)
+                        .bold()
+                    PointsIcon(punti: 100)
+                }
+            }
         }
     }
 }
@@ -75,28 +100,6 @@ struct Badge : Identifiable, View  {
 }
 
 
-
-//Immagine, nome, livello e punti
-struct ProfileBar : View {
-    var nomeUtente : String
-    var body : some View {
-        HStack {
-            ProfileImage()
-            VStack {
-                Text(nomeUtente)
-                    .font(.title)
-                    .bold()
-                HStack(spacing: 15) {
-                    Text("Liv 8")
-                        .font(.title3)
-                        .bold()
-                    PointsIcon(punti: 100)
-                }
-            }
-        }
-    }
-}
-
 //rettanglo colorato con i punti
 struct PointsIcon : View {
     var punti : Int
@@ -110,23 +113,6 @@ struct PointsIcon : View {
     }
 }
 
-//immagine di profilo
-struct ProfileImage : View {
-    var isPresented : Bool
-    var body : some View {
-        Image(systemName: "person.fill")
-            .resizable()
-            .scaledToFill()
-            .frame(width: 120, height: 120)
-            .clipShape(Circle())
-            .overlay(Circle()
-                        .stroke(Color.black, lineWidth: 4))
-            .padding()
-            .onTapGesture {
-                isPresented = true
-            }
-    }
-}
 
 //array di priva con i badge
 var badges : [Badge] = [
