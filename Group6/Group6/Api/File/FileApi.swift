@@ -9,7 +9,6 @@ import Foundation
 import FoundationNetworking
 #endif
 
-let host = "http://192.168.1.52:8081"
 
 
 func addFile(fileUri:String){
