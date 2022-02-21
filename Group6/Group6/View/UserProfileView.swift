@@ -98,7 +98,7 @@ struct PointsIcon : View {
     var body : some View {
         RoundedRectangle(cornerRadius: 15)
             .frame(width: 90, height: 60)
-            .foregroundColor(.green.opacity(0.5))
+            .foregroundColor(.accentColor.opacity(0.7))
             .overlay(Text("\(punti) pt")
                         .font(.title2)
                         .bold())

@@ -36,6 +36,7 @@
 		97260EF027BF9D8600AF6FF9 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97260EEF27BF9D8600AF6FF9 /* UserProfileView.swift */; };
 		97974BEE27C11DC4000AB965 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97974BED27C11DC4000AB965 /* SettingsView.swift */; };
 		97974BF027C13779000AB965 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97974BEF27C13779000AB965 /* TabBarView.swift */; };
+		97E0E71827C3FCE0006D12FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E0E71727C3FCE0006D12FE /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		97260EEF27BF9D8600AF6FF9 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		97974BED27C11DC4000AB965 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		97974BEF27C13779000AB965 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		97E0E71727C3FCE0006D12FE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				2AB7ECCF27C01B3A006CD0EE /* CouponModel.swift */,
 				2AB7ECD027C01B3A006CD0EE /* MapPoint.swift */,
 				2AB7ECCE27C01B3A006CD0EE /* Report.swift */,
+				97E0E71727C3FCE0006D12FE /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -392,11 +395,9 @@
 				2AB7ECD227C01B3A006CD0EE /* CouponModel.swift in Sources */,
 				2AB7ECC927C01AF8006CD0EE /* NotificationManager.swift in Sources */,
 				97974BF027C13779000AB965 /* TabBarView.swift in Sources */,
-				97260EF227BFA0B400AF6FF9 /* SettingsView.swift in Sources */,
+				97E0E71827C3FCE0006D12FE /* User.swift in Sources */,
 				2AB7ECD227C01B3A006CD0EE /* CouponModel.swift in Sources */,
 				2AB7ECC927C01AF8006CD0EE /* NotificationManager.swift in Sources */,
-				2AB7ECBF27C01AE7006CD0EE /* TabNavigationView.swift in Sources */,
-				2AB7ECBB27C01ADE006CD0EE /* SettingsView.swift in Sources */,
 				85BC913327C3A8080099CC2D /* ConfigUri.swift in Sources */,
 				2AB7ECC727C01AF8006CD0EE /* CouponStore.swift in Sources */,
 				2AB7ECB127C01AA9006CD0EE /* CouponDetailView.swift in Sources */,
