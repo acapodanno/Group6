@@ -9,6 +9,8 @@ import Foundation
 import FoundationNetworking
 #endif
 
+class ReportApi{
+    
 
 
 
@@ -31,7 +33,8 @@ func updateStatuSolvedReport(){
     sem.wait()
 }
 
-func getAllReport(){
+func getAllReport() -> Void {
+    var reportsModel:[ReportModel]=[]
     let semaphore = DispatchSemaphore (value: 0)
 
     var request = URLRequest(url: URL(string: host+"/get-all-report")!,timeoutInterval: Double.infinity)
@@ -43,7 +46,36 @@ func getAllReport(){
         semaphore.signal()
         return
       }
-      print(String(data: data, encoding: .utf8)!)
+        print(String(data: data, encoding: .utf8)!)
+        do{
+          if  var json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any],let  reports = json["message"] as? [[String: Any]]{
+                        for report in reports {
+                            let id = report["id"] as? Int32 ?? 00
+                            let description = report["description"] as? String ?? ""
+                            var latitude:Double = 0
+                            var longitude:Double = 0
+                            if let position = report["position"] as? [String:Any]{
+                                latitude = position["lat"] as? Double ?? 0
+                                longitude = position["longitude"] as? Double ?? 0
+                            }
+                            var statusName:String = ""
+                            if let status = report["status"] as? [String:Any]{
+                                statusName = status["name"] as? String ?? ""
+                            }
+                            let createdAt = report["createdAt"] as? String ?? "1970-01-01 00:00:00"
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+                            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                            let date = dateFormatter.date(from:createdAt)!
+                            reportsModel.append (ReportModel(id:id,description: description,status: statusName,latitude: latitude,longitude: longitude,createdAt: date))
+                            
+                        }
+                        print(reportsModel)
+                    }
+        }catch{
+            print("La mamma di luke")
+        }
+
       semaphore.signal()
     }
 
@@ -95,4 +127,5 @@ func addReport(latitude:Double,longitude:Double,description:String){
 
     task.resume()
     semaphore.wait()
+}
 }

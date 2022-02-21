@@ -8,9 +8,12 @@
 
 
 import SwiftUI
-
 struct ReportListView: View {
     var segnalazione = Report(title: "First Report", location: "Salerno", valid: true, note: "Note varie")
+    var reportApi:ReportApi = ReportApi()
+    init(){
+        reportApi.getAllReport()
+    }
     @State var showingAddView = false
     var body: some View {
         NavigationView{
