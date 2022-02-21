@@ -72,7 +72,9 @@ func updateStatuTakenReport(){
 func addReport(latitude:Double,longitude:Double,description:String){
     let semaphore = DispatchSemaphore (value: 0)
 
-    let parameters = "{\r\n    \"latitude\":"+latitude+",\r\n    \"longitude\":"+longitude+",\r\n    \"description\":"+description+"\r\n}"
+    var parameters = "{\r\n    \"latitude\":\(latitude)"
+    parameters += ",\r\n    \"longitude\":\(longitude)"
+    parameters += ",\r\n    \"description\":\(description)\r\n}"
     let postData = parameters.data(using: .utf8)
 
     var request = URLRequest(url: URL(string: host+"/add-report")!,timeoutInterval: Double.infinity)
