@@ -23,6 +23,9 @@
 		2AB7ECD127C01B3A006CD0EE /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECCE27C01B3A006CD0EE /* Report.swift */; };
 		2AB7ECD227C01B3A006CD0EE /* CouponModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECCF27C01B3A006CD0EE /* CouponModel.swift */; };
 		2AB7ECD327C01B3A006CD0EE /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECD027C01B3A006CD0EE /* MapPoint.swift */; };
+		85BC912F27C3A4060099CC2D /* ReportApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC912E27C3A4060099CC2D /* ReportApi.swift */; };
+		85BC913127C3A5A40099CC2D /* FileApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC913027C3A5A40099CC2D /* FileApi.swift */; };
+		85BC913327C3A8080099CC2D /* ConfigUri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC913227C3A8080099CC2D /* ConfigUri.swift */; };
 		85E8C07827B534AD00BB0B3C /* Group6App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8C07727B534AD00BB0B3C /* Group6App.swift */; };
 		85E8C07A27B534AD00BB0B3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8C07927B534AD00BB0B3C /* ContentView.swift */; };
 		85E8C07C27B534B000BB0B3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85E8C07B27B534B000BB0B3C /* Assets.xcassets */; };
@@ -70,6 +73,9 @@
 		2AB7ECCE27C01B3A006CD0EE /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		2AB7ECCF27C01B3A006CD0EE /* CouponModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponModel.swift; sourceTree = "<group>"; };
 		2AB7ECD027C01B3A006CD0EE /* MapPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
+		85BC912E27C3A4060099CC2D /* ReportApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportApi.swift; sourceTree = "<group>"; };
+		85BC913027C3A5A40099CC2D /* FileApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileApi.swift; sourceTree = "<group>"; };
+		85BC913227C3A8080099CC2D /* ConfigUri.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigUri.swift; sourceTree = "<group>"; };
 		85E8C07427B534AD00BB0B3C /* Group6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85E8C07727B534AD00BB0B3C /* Group6App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group6App.swift; sourceTree = "<group>"; };
 		85E8C07927B534AD00BB0B3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -150,6 +156,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		85BC911727C3A11E0099CC2D /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				85BC911927C3A1350099CC2D /* File */,
+				85BC911827C3A12E0099CC2D /* Report */,
+				85BC913227C3A8080099CC2D /* ConfigUri.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		85BC911827C3A12E0099CC2D /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				85BC912E27C3A4060099CC2D /* ReportApi.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		85BC911927C3A1350099CC2D /* File */ = {
+			isa = PBXGroup;
+			children = (
+				85BC913027C3A5A40099CC2D /* FileApi.swift */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
 		85E8C06B27B534AD00BB0B3C = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +205,7 @@
 		85E8C07627B534AD00BB0B3C /* Group6 */ = {
 			isa = PBXGroup;
 			children = (
+				85BC911727C3A11E0099CC2D /* Api */,
 				2A3A49D927C0EA6A0052D2D8 /* Info.plist */,
 				2AA849DB27BC2342004B3936 /* Components */,
 				850EE51E27BC1CD000B89DDD /* View */,
@@ -350,6 +383,8 @@
 				2AB7ECBD27C01AE3006CD0EE /* StoreView.swift in Sources */,
 				97260EF027BF9D8600AF6FF9 /* UserProfileView.swift in Sources */,
 				2AB7ECC627C01AF8006CD0EE /* NotificationTestTargetView.swift in Sources */,
+				85BC913127C3A5A40099CC2D /* FileApi.swift in Sources */,
+				85BC912F27C3A4060099CC2D /* ReportApi.swift in Sources */,
 				2AB7ECB927C01AC6006CD0EE /* ReportsListView.swift in Sources */,
 				2AB7ECCA27C01AF8006CD0EE /* NotificationTestView.swift in Sources */,
 				2AB7ECC827C01AF8006CD0EE /* Coordinator.swift in Sources */,
@@ -357,6 +392,12 @@
 				2AB7ECD227C01B3A006CD0EE /* CouponModel.swift in Sources */,
 				2AB7ECC927C01AF8006CD0EE /* NotificationManager.swift in Sources */,
 				97974BF027C13779000AB965 /* TabBarView.swift in Sources */,
+				97260EF227BFA0B400AF6FF9 /* SettingsView.swift in Sources */,
+				2AB7ECD227C01B3A006CD0EE /* CouponModel.swift in Sources */,
+				2AB7ECC927C01AF8006CD0EE /* NotificationManager.swift in Sources */,
+				2AB7ECBF27C01AE7006CD0EE /* TabNavigationView.swift in Sources */,
+				2AB7ECBB27C01ADE006CD0EE /* SettingsView.swift in Sources */,
+				85BC913327C3A8080099CC2D /* ConfigUri.swift in Sources */,
 				2AB7ECC727C01AF8006CD0EE /* CouponStore.swift in Sources */,
 				2AB7ECB127C01AA9006CD0EE /* CouponDetailView.swift in Sources */,
 				85E8C07827B534AD00BB0B3C /* Group6App.swift in Sources */,
