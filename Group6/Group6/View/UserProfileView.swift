@@ -11,7 +11,7 @@ import SwiftUI
 struct UserProfileView: View {
     @State var nomeUtente : String = "Genny"
     @State var isPresented : Bool = false
-    @State private var profileImage = UIImage(systemName: "user.fill")!
+    @State private var profileImage = UIImage(named: "profile image")!
     
     var body: some View {
         NavigationView{
@@ -27,9 +27,10 @@ struct UserProfileView: View {
             .navigationBarItems(trailing: NavigationLink(
                 destination: SettingsView(nomeUtente: $nomeUtente)) {
                     Label("", systemImage: "gear")})
+            
             .sheet(isPresented: $isPresented) {
-                PhotoPicker(profileImage: $profileImage) //crea un photoPicker
-            }
+                PhotoPicker(profileImage: $profileImage)
+            } //TODO: dopo aver scelto la foto non si aprono le impostazioni wtf
         }
     }
 }
@@ -131,6 +132,6 @@ var badges : [Badge] = [
 
 struct UserProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileView(nomeUtente: "Genny Savastano")
+        UserProfileView(nomeUtente: "Nome utente")
     }
 }

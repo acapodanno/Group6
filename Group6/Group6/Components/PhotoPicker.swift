@@ -5,6 +5,8 @@
 //  Created by Assunta Della Porta on 21/02/22.
 //
 
+
+// SwiftUI non ha un image picker, questo file fa im modo da poter utilizzare quello di UIKit
 import Foundation
 import SwiftUI
 
