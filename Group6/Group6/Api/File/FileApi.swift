@@ -10,7 +10,6 @@ import FoundationNetworking
 #endif
 
 
-
 func addFile(fileUri:String){
     let semaphore = DispatchSemaphore (value: 0)
 
@@ -38,7 +37,14 @@ func addFile(fileUri:String){
           body += "\r\n\r\n\(paramValue)\r\n"
         } else {
           let paramSrc = param["src"] as! String
-          let fileData = try NSData(contentsOfFile:paramSrc, options:[]) as Data
+        
+        var fileData:Data=NSData() as Data;
+        do{
+        try fileData = NSData(contentsOfFile:paramSrc, options:[]) as Data
+        }catch {
+          print("Error Sir Luke Avenue")
+        }
+                
           let fileContent = String(data: fileData, encoding: .utf8)!
           body += "; filename=\"\(paramSrc)\"\r\n"
             + "Content-Type: \"content-type header\"\r\n\r\n\(fileContent)\r\n"
