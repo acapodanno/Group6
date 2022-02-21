@@ -7,19 +7,22 @@
 
 import SwiftUI
 
+
 struct UserProfileView: View {
+    @State var nomeUtente : String = "Genny"
     
     var body: some View {
         NavigationView{
             Form {
-                ProfileBar()
+                ProfileBar(nomeUtente: nomeUtente)
                 Section(header: Text("Badges").font(.title2)) {
                     BadgesList()
                 }
             }
             .navigationTitle(Text("Profile"))
             .navigationBarItems(trailing:
-                                    NavigationLink(destination: SettingsView()) {
+                                    NavigationLink(
+                                        destination: SettingsView(nomeUtente: $nomeUtente)) {
                 Label("", systemImage: "gear")
             })
         }
@@ -70,11 +73,12 @@ struct Badge : Identifiable, View  {
 
 //Immagine, nome, livello e punti
 struct ProfileBar : View {
+    var nomeUtente : String
     var body : some View {
         HStack {
             ProfileImage()
             VStack {
-                Text("Nome utente")
+                Text(nomeUtente)
                     .font(.title)
                     .bold()
                 HStack(spacing: 15) {
@@ -132,6 +136,6 @@ var badges : [Badge] = [
 
 struct UserProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileView()
+        UserProfileView(nomeUtente: "Genny Savastano")
     }
 }

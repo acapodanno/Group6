@@ -1,13 +1,13 @@
 //
-//  TabNavigationView.swift
+//  TabBarView.swift
 //  Group6
 //
-//  Created by Luigi Verolla on 18/02/22.
+//  Created by Assunta Della Porta on 19/02/22.
 //
 
 import SwiftUI
 
-struct TabNavigationView: View {
+struct TabBarView: View {
     var body: some View {
         TabView {
             ReportListView()
@@ -25,7 +25,7 @@ struct TabNavigationView: View {
                     Image(systemName: "cart.fill")
                     Text("Store")
                 }
-            ProfileView()
+            UserProfileView()
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")
@@ -34,8 +34,9 @@ struct TabNavigationView: View {
     }
 }
 
-struct TabNavigationView_Previews: PreviewProvider {
+
+struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabNavigationView()
+        TabBarView()
     }
 }
