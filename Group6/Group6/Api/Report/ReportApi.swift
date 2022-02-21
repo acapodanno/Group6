@@ -9,7 +9,7 @@ import Foundation
 import FoundationNetworking
 #endif
 
-var host = "http://192.168.1.52:8081"
+let host = "http://192.168.1.52:8081"
 
 
 
