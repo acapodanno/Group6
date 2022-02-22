@@ -5,6 +5,8 @@ import SwiftUI
 
 struct AddReportView: View {
     
+    @StateObject var locationManager = LocationManager()
+    
     @State private var showingAlert = false
     @State var lastNoteValue : String = ""
     @State var note : String = ""
@@ -18,7 +20,7 @@ struct AddReportView: View {
             Form{
                 Section(header: Text("Location")){
                     HStack{
-                        Text("Salerno")
+                        Text(locationManager.address)
                         Spacer()
                         Image(systemName: "mappin")
                     }
