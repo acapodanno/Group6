@@ -19,12 +19,12 @@ struct UserProfileView: View {
                            nomeUtente: $user.userName,
                            user: $user)
                 Section(header: Text("Badges").font(.title2)) {
-                    BadgesList()
+                    BadgeListView()
                 }
             }
             .navigationTitle(Text("Profile"))
             .navigationBarItems(trailing: NavigationLink(
-                destination: SettingsView(nomeUtente: $user.userName)) {
+                destination: SettingsView(user: $user)) {
                     Label("", systemImage: "gear")})
             
             .sheet(isPresented: $isPresented) {
@@ -71,35 +71,6 @@ struct ProfileBar : View {
 }
 
 
-//ScrollView con tutti i badge
-struct BadgesList : View {
-    var layout = [GridItem(.adaptive(minimum: 100))] //la dimensione si adatta allo scherno, la dimensione minima degli elementi è comunque 100
-    var body : some View {
-        ScrollView {
-            LazyVGrid(columns: layout){
-                ForEach(badges) { badge in  //badges è un array di badge
-                    badge
-                        .padding()
-                }
-            }
-        }
-    }
-}
-
-struct Badge : Identifiable, View  {
-    var icon : String
-    var description : String
-    var id  = UUID()
-    var body : some View {
-        VStack (spacing: 10){
-            Image(systemName: icon)
-                .font(.title2)
-            Text(description)
-        }
-    }
-}
-
-
 //rettanglo colorato con i punti
 struct PointsIcon : View {
     var punti : Int
@@ -113,7 +84,40 @@ struct PointsIcon : View {
     }
 }
 
+struct BadgeListView : View {
+    var body : some View {
+        List {
+            ForEach(badges) { badge in
+                BadgeView(badge: badge)
+                    .padding(7)
+            }
+        }
+    }
+}
 
+
+struct BadgeView : View {
+    var badge : Badge
+    var body : some View {
+        HStack(spacing: 40) {
+            VStack {
+                Image(uiImage: badge.image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50)
+                Text("\(badge.requiredPoints) pt")
+            }
+            VStack {
+                Text(badge.name)
+                    .font(.title2)
+            }
+        }
+    }
+}
+
+
+
+//PREVIEW
 struct UserProfileView_Previews: PreviewProvider {
     static var previews: some View {
         UserProfileView()
@@ -122,16 +126,32 @@ struct UserProfileView_Previews: PreviewProvider {
 
 
 
+/*
+struct BadgeView : Identifiable, View  {
+    var icon : String
+    var description : String
+    var id  = UUID()
+    var body : some View {
+        VStack (spacing: 10){
+            Image(systemName: icon)
+                .font(.title2)
+            Text(description)
+        }
+    }
+}
+
+
 //array di priva con i badge
-var badges : [Badge] = [
-    Badge.init(icon:  "heart", description: "cuore"),
-    Badge.init(icon: "heart.fill", description: "cuore pieno"),
-    Badge.init(icon: "cart", description: "carrello"),
-    Badge.init(icon: "cart.fill", description: "carrello pieno"),
-    Badge.init(icon: "person", description: "user"),
-    Badge.init(icon:  "heart", description: "cuore1"),
-    Badge.init(icon: "heart.fill", description: "cuore pieno1"),
-    Badge.init(icon: "cart", description: "carrello1"),
-    Badge.init(icon: "cart.fill", description: "carrello pieno1"),
-    Badge.init(icon: "person", description: "user1")
+var badgess : [BadgeView] = [
+    BadgeView.init(icon:  "heart", description: "cuore"),
+    BadgeView.init(icon: "heart.fill", description: "cuore pieno"),
+    BadgeView.init(icon: "cart", description: "carrello"),
+    BadgeView.init(icon: "cart.fill", description: "carrello pieno"),
+    BadgeView.init(icon: "person", description: "user"),
+    BadgeView.init(icon:  "heart", description: "cuore1"),
+    BadgeView.init(icon: "heart.fill", description: "cuore pieno1"),
+    BadgeView.init(icon: "cart", description: "carrello1"),
+    BadgeView.init(icon: "cart.fill", description: "carrello pieno1"),
+    BadgeView.init(icon: "person", description: "user1")
 ]
+ */

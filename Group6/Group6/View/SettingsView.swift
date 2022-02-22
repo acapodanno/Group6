@@ -9,22 +9,41 @@ import SwiftUI
 
 
 struct SettingsView: View {
-    @Binding var nomeUtente : String
+    @Binding var user : User
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Nome utente")) {
-                    TextField("nomeUtente", text: $nomeUtente)
+                Section (header: Text("Profile image")) {
+                    HStack {
+                        Spacer()
+                        Image(uiImage: user.profileImage)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 110, height: 110)
+                            .clipShape(Circle())
+                            .overlay(Circle()
+                                        .stroke(Color.black, lineWidth: 4))
+                            .padding()
+                        Spacer()
+                    }
+                }
+                Section(header: Text("User name")) {
+                    TextField("nomeUtente", text: $user.userName)
+                }
+                Section (header: Text("Operator")) {
+                    HStack {
+                        Toggle("Are you an operator? ", isOn: $user.isOperator)
+                    }
                 }
             }
-            .navigationTitle(Text("Settings"))
+            .navigationTitle(Text("Profile Settings"))
         }
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
-    @State static var bibbi : String = "Nome Utente"
+    @State static var bibbi : User = User(isOperator: false, userName: "Francesca", level: 7, points: 102, profileImage: UIImage(named: "profile image")!, reportings: [])
     static var previews: some View {
-        SettingsView(nomeUtente: $bibbi)
+        SettingsView(user: $bibbi)
     }
 }
