@@ -8,16 +8,22 @@
 
 
 import SwiftUI
+import CoreLocation
+import AVFAudio
+
 struct ReportListView: View {
-    var segnalazione = Report(title: "First Report", location: "Salerno", valid: true, note: "Note varie")
+    
+    @State var segnalazioni:[ReportModel]
     var reportApi:ReportApi = ReportApi()
-    init(){
-        reportApi.getAllReport()
-    }
     @State var showingAddView = false
+    @StateObject var locationManager = LocationManager()
+    init(){
+        self.segnalazioni = reportApi.getAllReport()
+    }
     var body: some View {
         NavigationView{
-            List(){
+            List(segnalazioni){
+                segnalazione in
                 NavigationLink(destination: ReportDetailView(report: segnalazione)){
                 SegCell(segnalazione: segnalazione)
                 }
@@ -40,13 +46,14 @@ struct ReportListView: View {
     }
     
     struct SegCell : View {
-        var segnalazione : Report
+        var segnalazione : ReportModel
+        let location = CLLocation(latitude: -22.963451, longitude: -43.198242)
         var body: some View {
             HStack{
                 Image(systemName : "mappin")
                 VStack(alignment: .leading, spacing: 2.0){
-                    Text(segnalazione.title)
-                    Text(segnalazione.location).font(.footnote)
+                    Text(segnalazione.description)
+                    Text("\(segnalazione.latitude)").font(.footnote)
                         .foregroundColor(Color.gray)
                 }
             }.frame(height: 60.0)

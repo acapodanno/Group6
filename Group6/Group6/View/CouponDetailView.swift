@@ -11,6 +11,7 @@ struct CouponDetailView: View {
     @State private var showingAlert = false
     @State private var couponAcquired = false
     @EnvironmentObject var couponS: CouponStore
+    @StateObject var locationManager = LocationManager()
     var coupon: Coupon
     
     var body: some View {
@@ -72,7 +73,7 @@ struct CouponDetailView: View {
 
 struct CouponDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CouponDetailView(coupon: Coupon(title: "Apples Store", description: "This coupon is a 10% discount on apples", cost: 50, acquired: true))
+        CouponDetailView(coupon: Coupon(id:0,title: "", description: "", cost: 0, acquired: false))
             .previewInterfaceOrientation(.portrait)
     }
 }

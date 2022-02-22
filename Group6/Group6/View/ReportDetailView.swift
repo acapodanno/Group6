@@ -12,19 +12,19 @@ struct ReportDetailView: View {
     
     @State var imageArray : [UIImage?] = []
     
-    let report : Report
+    let report : ReportModel
     var body: some View {
             Form{
                 Section(header: Text("Location")){
                     HStack{
-                        Text(report.location)
+                        Text("\(report.latitude)")
                         Spacer()
                         Image(systemName: "mappin")
                     }
                 }
                 Section(header: Text("Date")){
                     HStack{
-                        Text(report.date.formatted())
+                        Text(report.createdAt.formatted())
                         Spacer()
                         Image(systemName: "calendar")
                     }
@@ -50,7 +50,7 @@ struct ReportDetailView: View {
                 }
                 Section(header: Text("Note")){
                     HStack{
-                        Text(report.note)
+                        Text(report.description)
                         Spacer()
                         Image(systemName: "note.text")
                     }
@@ -61,6 +61,6 @@ struct ReportDetailView: View {
 
 struct ReportDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportDetailView(report: Report(title: "Prima Segnalazione", location: "Salerno", valid: true, note: " Note varie"))
+        ReportDetailView(report: ReportModel(id: 0, description: "", status: "", latitude: 0, longitude: 0, createdAt: Date()))
     }
 }

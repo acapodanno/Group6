@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ReportModel{
+struct ReportModel:Identifiable{
     let id: Int32
     let description:String
     let status:String

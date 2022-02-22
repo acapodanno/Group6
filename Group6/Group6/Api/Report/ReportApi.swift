@@ -33,7 +33,7 @@ func updateStatuSolvedReport(){
     sem.wait()
 }
 
-func getAllReport() -> Void {
+func getAllReport() -> [ReportModel]{
     var reportsModel:[ReportModel]=[]
     let semaphore = DispatchSemaphore (value: 0)
 
@@ -73,7 +73,7 @@ func getAllReport() -> Void {
                         print(reportsModel)
                     }
         }catch{
-            print("La mamma di luke")
+            print("Error!")
         }
 
       semaphore.signal()
@@ -81,6 +81,7 @@ func getAllReport() -> Void {
 
     task.resume()
     semaphore.wait()
+    return reportsModel
 
 }
 func updateStatuTakenReport(){

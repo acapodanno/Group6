@@ -8,7 +8,7 @@
 import Foundation
 
 struct Coupon: Identifiable {
-    let id = UUID()
+    let id: Int32
     let title: String
     let description: String
     let cost: Int
