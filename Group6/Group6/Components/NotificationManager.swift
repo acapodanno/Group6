@@ -47,7 +47,7 @@ class NotificationManager: NSObject, ObservableObject, UNUserNotificationCenterD
         completionHandler([.banner, .list, .badge, .sound])
     }
     
-    func sendNotification(title: String, subtitle: String, body: String, launchIn: Double)
+    func sendTestNotification(title: String, subtitle: String, body: String, launchIn: Double)
     {
         let content = UNMutableNotificationContent()
         content.title = title
@@ -55,13 +55,19 @@ class NotificationManager: NSObject, ObservableObject, UNUserNotificationCenterD
         content.body = body
         content.userInfo["type"] = "test"
         
-        // TODO: quando avremo inserito il logo negli assets possiamo decommentare queste righe
-        /*
-        let imageName = "logo"
-        guard let imageURL = Bundle.main.url(forResource: imageName, withExtension: "png") else { return }
-        let attachment = try! UNNotificationAttachment(identifier: imageName, url: imageURL, options: .none)
-        content.attachments = [attachment]
-         */
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: launchIn, repeats: false)
+                let request = UNNotificationRequest(identifier: "demoNotification", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
+    func sendProximityNotification(title: String, subtitle: String, body: String, launchIn: Double)
+    {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.subtitle = subtitle
+        content.body = body
+        content.userInfo["type"] = "proximity"
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: launchIn, repeats: false)
                 let request = UNNotificationRequest(identifier: "demoNotification", content: content, trigger: trigger)
