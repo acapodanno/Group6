@@ -19,7 +19,7 @@ struct NotificationTestView: View
             Button(action: {
                 withAnimation {
                     // test notification: triggers after 5 seconds
-                    self.notificationManager.sendNotification(title: "Hurray!", subtitle: "Nice one!", body: "If you see this text, launching the local notification worked!", launchIn: 5)
+                  //  self.notificationManager.sendNotification(title: "Hurray!", subtitle: "Nice one!", body: "If you see this text, launching the local notification worked!", launchIn: 5)
                 }
             }) {
                 Text("Launch Local Notification 🚀")

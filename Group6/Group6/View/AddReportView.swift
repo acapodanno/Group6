@@ -6,7 +6,7 @@ import SwiftUI
 struct AddReportView: View {
     
     @StateObject var locationManager = LocationManager()
-    
+    var reportApi:ReportApi = ReportApi()
     @State private var showingAlert = false
     @State var lastNoteValue : String = ""
     @State var note : String = ""
@@ -104,12 +104,14 @@ struct AddReportView: View {
     }
     func saveReport(){
         print ("\(note)")
-        if(imageArray.count < 1){
-            showingAlert.toggle()
-        }else{
+        reportApi.addReport(latitude: 0, longitude: 0, description: note,address:"\(locationManager.address)")
+        
+     //   if(imageArray.count < 1){
+     //       showingAlert.toggle()
+     //   }else{
             presentationMode.wrappedValue.dismiss()
             //Send to db Report("Location: location, Date: date, photo : photo, note : note ")
-        }
+     //   }
     }
 }
 

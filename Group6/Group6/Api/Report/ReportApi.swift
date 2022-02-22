@@ -54,9 +54,11 @@ func getAllReport() -> [ReportModel]{
                             let description = report["description"] as? String ?? ""
                             var latitude:Double = 0
                             var longitude:Double = 0
+                            var address:String = ""
                             if let position = report["position"] as? [String:Any]{
                                 latitude = position["lat"] as? Double ?? 0
                                 longitude = position["longitude"] as? Double ?? 0
+                                address = position["address"] as? String ?? ""
                             }
                             var statusName:String = ""
                             if let status = report["status"] as? [String:Any]{
@@ -64,10 +66,12 @@ func getAllReport() -> [ReportModel]{
                             }
                             let createdAt = report["createdAt"] as? String ?? "1970-01-01 00:00:00"
                             let dateFormatter = DateFormatter()
+                            
+
                             dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
                             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                             let date = dateFormatter.date(from:createdAt)!
-                            reportsModel.append (ReportModel(id:id,description: description,status: statusName,latitude: latitude,longitude: longitude,createdAt: date))
+                            reportsModel.append (ReportModel(id:id,description: description,status: statusName,latitude: latitude,longitude: longitude,createdAt: date,address: address))
                             
                         }
                         print(reportsModel)
@@ -102,19 +106,27 @@ func updateStatuTakenReport(){
     task.resume()
     sem.wait()
 }
-func addReport(latitude:Double,longitude:Double,description:String){
+    func addReport(latitude:Double,longitude:Double,description:String,address:String){
     let semaphore = DispatchSemaphore (value: 0)
-
-    var parameters = "{\r\n    \"latitude\":\(latitude)"
-    parameters += ",\r\n    \"longitude\":\(longitude)"
-    parameters += ",\r\n    \"description\":\(description)\r\n}"
+    let json: [String: Any] = ["latitude": "\(latitude)",
+                               "longitude": "\(longitude)",
+                               "description": "\(description)",
+                               "address": "\(address)"
+                                ]
+    let jsonData = try? JSONSerialization.data(withJSONObject: json)
+    var parameters = "{\r\n\"latitude\":\"\(latitude)\""
+    parameters += ",\r\n\"longitude\":\"\(longitude)\""
+    parameters += ",\r\n\"description\":\"\(description)\""
+    parameters += ",\r\n\"address\":\"\(address)\"\r\n}"
+        print(parameters)
+    
     let postData = parameters.data(using: .utf8)
 
     var request = URLRequest(url: URL(string: host+"/add-report")!,timeoutInterval: Double.infinity)
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
     request.httpMethod = "POST"
-    request.httpBody = postData
+    request.httpBody = jsonData
 
     let task = URLSession.shared.dataTask(with: request) { data, response, error in
       guard let data = data else {

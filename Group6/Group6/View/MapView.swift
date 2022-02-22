@@ -5,7 +5,7 @@ import CoreLocation
 struct MapView: View
 {
     @State var detailViewShown = false
-    @State var currItem : ReportModel = ReportModel(id: 0, description: "", status: "", latitude: 0, longitude: 0, createdAt: Date.now)
+    @State var currItem : ReportModel = ReportModel(id: 0, description: "", status: "", latitude: 0, longitude: 0, createdAt: Date.now,address: "")
     @StateObject var locationManager = LocationManager()
     
     var reportApi = ReportApi()

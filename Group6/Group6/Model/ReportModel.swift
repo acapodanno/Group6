@@ -14,4 +14,5 @@ struct ReportModel:Identifiable{
     let latitude:Double
     let longitude:Double
     let createdAt:Date
+    let address:String
 }

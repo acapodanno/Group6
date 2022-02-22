@@ -53,7 +53,7 @@ struct ReportListView: View {
                 Image(systemName : "mappin")
                 VStack(alignment: .leading, spacing: 2.0){
                     Text(segnalazione.description)
-                    Text("\(segnalazione.latitude)").font(.footnote)
+                    Text("\(segnalazione.address)").font(.footnote)
                         .foregroundColor(Color.gray)
                 }
             }.frame(height: 60.0)

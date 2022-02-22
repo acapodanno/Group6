@@ -20,8 +20,6 @@
 		2AB7ECCA27C01AF8006CD0EE /* NotificationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC427C01AF8006CD0EE /* NotificationTestView.swift */; };
 		2AB7ECCB27C01AF8006CD0EE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC527C01AF8006CD0EE /* LocationManager.swift */; };
 		2AB7ECD127C01B3A006CD0EE /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECCE27C01B3A006CD0EE /* Report.swift */; };
-		2AB7ECD227C01B3A006CD0EE /* CouponModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECCF27C01B3A006CD0EE /* CouponModel.swift */; };
-		2AB7ECD327C01B3A006CD0EE /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECD027C01B3A006CD0EE /* MapPoint.swift */; };
 		85BC912F27C3A4060099CC2D /* ReportApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC912E27C3A4060099CC2D /* ReportApi.swift */; };
 		85BC913127C3A5A40099CC2D /* FileApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC913027C3A5A40099CC2D /* FileApi.swift */; };
 		85BC913327C3A8080099CC2D /* ConfigUri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC913227C3A8080099CC2D /* ConfigUri.swift */; };
@@ -78,7 +76,6 @@
 		2AB7ECC527C01AF8006CD0EE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2AB7ECCE27C01B3A006CD0EE /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		2AB7ECCF27C01B3A006CD0EE /* CouponModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponModel.swift; sourceTree = "<group>"; };
-		2AB7ECD027C01B3A006CD0EE /* MapPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
 		85BC912E27C3A4060099CC2D /* ReportApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportApi.swift; sourceTree = "<group>"; };
 		85BC913027C3A5A40099CC2D /* FileApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileApi.swift; sourceTree = "<group>"; };
 		85BC913227C3A8080099CC2D /* ConfigUri.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigUri.swift; sourceTree = "<group>"; };
@@ -148,10 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				2AB7ECCF27C01B3A006CD0EE /* CouponModel.swift */,
-				2AB7ECCE27C01B3A006CD0EE /* Report.swift */,
 				85BC913A27C421680099CC2D /* ReportModel.swift */,
 				97E0E71927C414EA006D12FE /* CouponModel.swift */,
-				2AB7ECD027C01B3A006CD0EE /* MapPoint.swift */,
 				2AB7ECCE27C01B3A006CD0EE /* Report.swift */,
 				97E0E71727C3FCE0006D12FE /* User.swift */,
 				9743B54327C544A10024185B /* Badge.swift */,

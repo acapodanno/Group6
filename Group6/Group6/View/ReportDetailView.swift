@@ -17,7 +17,7 @@ struct ReportDetailView: View {
             Form{
                 Section(header: Text("Location")){
                     HStack{
-                        Text("\(report.latitude)")
+                        Text("\(report.address)")
                         Spacer()
                         Image(systemName: "mappin")
                     }
@@ -61,6 +61,6 @@ struct ReportDetailView: View {
 
 struct ReportDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportDetailView(report: ReportModel(id: 0, description: "", status: "", latitude: 0, longitude: 0, createdAt: Date()))
+        ReportDetailView(report: ReportModel(id: 0, description: "", status: "", latitude: 0, longitude: 0, createdAt: Date(),address: ""))
     }
 }
