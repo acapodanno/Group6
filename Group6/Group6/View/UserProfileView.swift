@@ -9,14 +9,12 @@ import SwiftUI
 
 
 struct UserProfileView: View {
-    @State var isPresented : Bool = false
     @State var user : User = User(isOperator: false, userName: "Francesca", level: 7, points: 102, profileImage: UIImage(named: "profile image")!, reportings: [])
     
     var body: some View {
         NavigationView{
             Form {
-                ProfileBar(isPresented: $isPresented,
-                           nomeUtente: $user.userName,
+                ProfileBar(nomeUtente: $user.userName,
                            user: $user)
                 Section(header: Text("Badges").font(.title2)) {
                     BadgeListView()
@@ -27,9 +25,7 @@ struct UserProfileView: View {
                 destination: SettingsView(user: $user)) {
                     Label("", systemImage: "gear")})
             
-            .sheet(isPresented: $isPresented) {
-                PhotoPicker(profileImage: $user.profileImage)
-            } //TODO: dopo aver scelto la foto non si aprono le impostazioni wtf
+             //TODO: dopo aver scelto la foto non si aprono le impostazioni wtf
         }
     }
 }
@@ -38,7 +34,6 @@ struct UserProfileView: View {
 
 //Immagine, nome, livello e punti
 struct ProfileBar : View {
-    @Binding var isPresented : Bool
     @Binding var nomeUtente : String
     @Binding var user : User
     
@@ -52,9 +47,6 @@ struct ProfileBar : View {
                 .overlay(Circle()
                             .stroke(Color.black, lineWidth: 4))
                 .padding()
-                .onTapGesture {
-                    isPresented = true  //quando si clicca sull'immagine si apre lo sheet col picker
-                }
             VStack {
                 Text(user.userName)
                     .font(.title)

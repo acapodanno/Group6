@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct SettingsView: View {
+    @State var isPresented : Bool = false
     @Binding var user : User
     var body: some View {
         NavigationView {
@@ -24,6 +25,9 @@ struct SettingsView: View {
                             .overlay(Circle()
                                         .stroke(Color.black, lineWidth: 4))
                             .padding()
+                            .onTapGesture {
+                                isPresented = true  //quando si clicca sull'immagine si apre lo sheet col picker
+                            }
                         Spacer()
                     }
                 }
@@ -37,6 +41,9 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle(Text("Profile Settings"))
+            .sheet(isPresented: $isPresented) {
+                PhotoPicker(profileImage: $user.profileImage)
+            }
         }
     }
 }
