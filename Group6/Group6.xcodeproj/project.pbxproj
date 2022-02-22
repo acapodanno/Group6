@@ -13,17 +13,15 @@
 		2AB7ECB527C01AB3006CD0EE /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECB427C01AB3006CD0EE /* MapView.swift */; };
 		2AB7ECB727C01AC1006CD0EE /* ReportDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECB627C01AC1006CD0EE /* ReportDetailView.swift */; };
 		2AB7ECB927C01AC6006CD0EE /* ReportsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECB827C01AC6006CD0EE /* ReportsListView.swift */; };
-		2AB7ECBB27C01ADE006CD0EE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECBA27C01ADE006CD0EE /* SettingsView.swift */; };
 		2AB7ECBD27C01AE3006CD0EE /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECBC27C01AE3006CD0EE /* StoreView.swift */; };
-		2AB7ECBF27C01AE7006CD0EE /* TabNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECBE27C01AE7006CD0EE /* TabNavigationView.swift */; };
 		2AB7ECC627C01AF8006CD0EE /* NotificationTestTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC027C01AF8006CD0EE /* NotificationTestTargetView.swift */; };
 		2AB7ECC727C01AF8006CD0EE /* CouponStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC127C01AF8006CD0EE /* CouponStore.swift */; };
 		2AB7ECC827C01AF8006CD0EE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC227C01AF8006CD0EE /* Coordinator.swift */; };
-		2AB7ECC927C01AF8006CD0EE /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC327C01AF8006CD0EE /* NotificationManager.swift */; };
 		2AB7ECCA27C01AF8006CD0EE /* NotificationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC427C01AF8006CD0EE /* NotificationTestView.swift */; };
 		2AB7ECCB27C01AF8006CD0EE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC527C01AF8006CD0EE /* LocationManager.swift */; };
 		2AB7ECD127C01B3A006CD0EE /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECCE27C01B3A006CD0EE /* Report.swift */; };
 		2AB7ECD227C01B3A006CD0EE /* CouponModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECCF27C01B3A006CD0EE /* CouponModel.swift */; };
+		2AB7ECD327C01B3A006CD0EE /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECD027C01B3A006CD0EE /* MapPoint.swift */; };
 		85BC912F27C3A4060099CC2D /* ReportApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC912E27C3A4060099CC2D /* ReportApi.swift */; };
 		85BC913127C3A5A40099CC2D /* FileApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC913027C3A5A40099CC2D /* FileApi.swift */; };
 		85BC913327C3A8080099CC2D /* ConfigUri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC913227C3A8080099CC2D /* ConfigUri.swift */; };
@@ -38,7 +36,13 @@
 		85E8C09327B534B000BB0B3C /* Group6UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8C09227B534B000BB0B3C /* Group6UITests.swift */; };
 		85E8C09527B534B000BB0B3C /* Group6UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8C09427B534B000BB0B3C /* Group6UITestsLaunchTests.swift */; };
 		97260EF027BF9D8600AF6FF9 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97260EEF27BF9D8600AF6FF9 /* UserProfileView.swift */; };
-		97260EF227BFA0B400AF6FF9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97260EF127BFA0B400AF6FF9 /* SettingsView.swift */; };
+		9743B54427C544A10024185B /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9743B54327C544A10024185B /* Badge.swift */; };
+		97974BEE27C11DC4000AB965 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97974BED27C11DC4000AB965 /* SettingsView.swift */; };
+		97974BF027C13779000AB965 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97974BEF27C13779000AB965 /* TabBarView.swift */; };
+		97E0E71827C3FCE0006D12FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E0E71727C3FCE0006D12FE /* User.swift */; };
+		97E0E71A27C414EA006D12FE /* CouponModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E0E71927C414EA006D12FE /* CouponModel.swift */; };
+		97E0E71C27C41594006D12FE /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E0E71B27C41594006D12FE /* NotificationManager.swift */; };
+		97E0E71E27C41B61006D12FE /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E0E71D27C41B61006D12FE /* PhotoPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,17 +70,15 @@
 		2AB7ECB427C01AB3006CD0EE /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		2AB7ECB627C01AC1006CD0EE /* ReportDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailView.swift; sourceTree = "<group>"; };
 		2AB7ECB827C01AC6006CD0EE /* ReportsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsListView.swift; sourceTree = "<group>"; };
-		2AB7ECBA27C01ADE006CD0EE /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2AB7ECBC27C01AE3006CD0EE /* StoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
-		2AB7ECBE27C01AE7006CD0EE /* TabNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabNavigationView.swift; sourceTree = "<group>"; };
 		2AB7ECC027C01AF8006CD0EE /* NotificationTestTargetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTestTargetView.swift; sourceTree = "<group>"; };
 		2AB7ECC127C01AF8006CD0EE /* CouponStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponStore.swift; sourceTree = "<group>"; };
 		2AB7ECC227C01AF8006CD0EE /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		2AB7ECC327C01AF8006CD0EE /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		2AB7ECC427C01AF8006CD0EE /* NotificationTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTestView.swift; sourceTree = "<group>"; };
 		2AB7ECC527C01AF8006CD0EE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2AB7ECCE27C01B3A006CD0EE /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		2AB7ECCF27C01B3A006CD0EE /* CouponModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponModel.swift; sourceTree = "<group>"; };
+		2AB7ECD027C01B3A006CD0EE /* MapPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
 		85BC912E27C3A4060099CC2D /* ReportApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportApi.swift; sourceTree = "<group>"; };
 		85BC913027C3A5A40099CC2D /* FileApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileApi.swift; sourceTree = "<group>"; };
 		85BC913227C3A8080099CC2D /* ConfigUri.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigUri.swift; sourceTree = "<group>"; };
@@ -94,7 +96,13 @@
 		85E8C09227B534B000BB0B3C /* Group6UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group6UITests.swift; sourceTree = "<group>"; };
 		85E8C09427B534B000BB0B3C /* Group6UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group6UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		97260EEF27BF9D8600AF6FF9 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
-		97260EF127BFA0B400AF6FF9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9743B54327C544A10024185B /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		97974BED27C11DC4000AB965 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		97974BEF27C13779000AB965 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		97E0E71727C3FCE0006D12FE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		97E0E71927C414EA006D12FE /* CouponModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponModel.swift; sourceTree = "<group>"; };
+		97E0E71B27C41594006D12FE /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		97E0E71D27C41B61006D12FE /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,9 +136,10 @@
 				2AB7ECC227C01AF8006CD0EE /* Coordinator.swift */,
 				2AB7ECC127C01AF8006CD0EE /* CouponStore.swift */,
 				2AB7ECC527C01AF8006CD0EE /* LocationManager.swift */,
-				2AB7ECC327C01AF8006CD0EE /* NotificationManager.swift */,
 				2AB7ECC027C01AF8006CD0EE /* NotificationTestTargetView.swift */,
 				2AB7ECC427C01AF8006CD0EE /* NotificationTestView.swift */,
+				97E0E71B27C41594006D12FE /* NotificationManager.swift */,
+				97E0E71D27C41B61006D12FE /* PhotoPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -141,6 +150,11 @@
 				2AB7ECCF27C01B3A006CD0EE /* CouponModel.swift */,
 				2AB7ECCE27C01B3A006CD0EE /* Report.swift */,
 				85BC913A27C421680099CC2D /* ReportModel.swift */,
+				97E0E71927C414EA006D12FE /* CouponModel.swift */,
+				2AB7ECD027C01B3A006CD0EE /* MapPoint.swift */,
+				2AB7ECCE27C01B3A006CD0EE /* Report.swift */,
+				97E0E71727C3FCE0006D12FE /* User.swift */,
+				9743B54327C544A10024185B /* Badge.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,17 +162,16 @@
 		850EE51E27BC1CD000B89DDD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				97260EEF27BF9D8600AF6FF9 /* UserProfileView.swift */,
+				97974BED27C11DC4000AB965 /* SettingsView.swift */,
 				2AB7ECB027C01AA9006CD0EE /* CouponDetailView.swift */,
 				2AB7ECAE27C01AA3006CD0EE /* AddReportView.swift */,
 				2AB7ECB227C01AAE006CD0EE /* ImagePickerView.swift */,
 				2AB7ECB827C01AC6006CD0EE /* ReportsListView.swift */,
-				2AB7ECBE27C01AE7006CD0EE /* TabNavigationView.swift */,
 				2AB7ECB627C01AC1006CD0EE /* ReportDetailView.swift */,
 				2AB7ECBC27C01AE3006CD0EE /* StoreView.swift */,
-				2AB7ECBA27C01ADE006CD0EE /* SettingsView.swift */,
 				2AB7ECB427C01AB3006CD0EE /* MapView.swift */,
-				97260EEF27BF9D8600AF6FF9 /* UserProfileView.swift */,
-				97260EF127BFA0B400AF6FF9 /* SettingsView.swift */,
+				97974BEF27C13779000AB965 /* TabBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -406,25 +419,27 @@
 				85BC913B27C421680099CC2D /* ReportModel.swift in Sources */,
 				2AB7ECB727C01AC1006CD0EE /* ReportDetailView.swift in Sources */,
 				2AB7ECAF27C01AA3006CD0EE /* AddReportView.swift in Sources */,
+				9743B54427C544A10024185B /* Badge.swift in Sources */,
 				2AB7ECBD27C01AE3006CD0EE /* StoreView.swift in Sources */,
 				97260EF027BF9D8600AF6FF9 /* UserProfileView.swift in Sources */,
 				2AB7ECC627C01AF8006CD0EE /* NotificationTestTargetView.swift in Sources */,
 				85BC914127C4F5460099CC2D /* CouponApi.swift in Sources */,
+				97E0E71E27C41B61006D12FE /* PhotoPicker.swift in Sources */,
 				85BC913127C3A5A40099CC2D /* FileApi.swift in Sources */,
 				85BC912F27C3A4060099CC2D /* ReportApi.swift in Sources */,
 				2AB7ECB927C01AC6006CD0EE /* ReportsListView.swift in Sources */,
 				2AB7ECCA27C01AF8006CD0EE /* NotificationTestView.swift in Sources */,
 				2AB7ECC827C01AF8006CD0EE /* Coordinator.swift in Sources */,
 				2AB7ECCB27C01AF8006CD0EE /* LocationManager.swift in Sources */,
-				97260EF227BFA0B400AF6FF9 /* SettingsView.swift in Sources */,
-				2AB7ECD227C01B3A006CD0EE /* CouponModel.swift in Sources */,
-				2AB7ECC927C01AF8006CD0EE /* NotificationManager.swift in Sources */,
-				2AB7ECBF27C01AE7006CD0EE /* TabNavigationView.swift in Sources */,
-				2AB7ECBB27C01ADE006CD0EE /* SettingsView.swift in Sources */,
+				97974BF027C13779000AB965 /* TabBarView.swift in Sources */,
+				97E0E71827C3FCE0006D12FE /* User.swift in Sources */,
+				97E0E71A27C414EA006D12FE /* CouponModel.swift in Sources */,
 				85BC913327C3A8080099CC2D /* ConfigUri.swift in Sources */,
 				2AB7ECC727C01AF8006CD0EE /* CouponStore.swift in Sources */,
 				2AB7ECB127C01AA9006CD0EE /* CouponDetailView.swift in Sources */,
+				97E0E71C27C41594006D12FE /* NotificationManager.swift in Sources */,
 				85E8C07827B534AD00BB0B3C /* Group6App.swift in Sources */,
+				97974BEE27C11DC4000AB965 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

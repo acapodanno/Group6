@@ -7,56 +7,119 @@
 
 import SwiftUI
 
+
 struct UserProfileView: View {
+    @State var user : User = User(isOperator: false, userName: "Francesca", level: 7, points: 102, profileImage: UIImage(named: "profile image")!, reportings: [])
     
     var body: some View {
         NavigationView{
             Form {
-                ProfileBar()
+                ProfileBar(nomeUtente: $user.userName,
+                           user: $user)
                 Section(header: Text("Badges").font(.title2)) {
-                    BadgesList()
+                    BadgeListView()
                 }
             }
             .navigationTitle(Text("Profile"))
-            .navigationBarItems(trailing:
-                                    NavigationLink(destination: SettingsView()) {
-                Label("", systemImage: "gear")
-            })
+            .navigationBarItems(trailing: NavigationLink(
+                destination: SettingsView(user: $user)) {
+                    Label("", systemImage: "gear")})
+            
+             //TODO: dopo aver scelto la foto non si aprono le impostazioni wtf
         }
     }
 }
 
 //COMPONENTI
 
-//label inpostazioni
-struct SettingsLabel : View {
+//Immagine, nome, livello e punti
+struct ProfileBar : View {
+    @Binding var nomeUtente : String
+    @Binding var user : User
+    
     var body : some View {
-        VStack {
-            Image(systemName: "gear")
-        }
-    }
-}
-
-
-//ScrollView con tutti i badge
-struct BadgesList : View {
-    var layout = [GridItem(.adaptive(minimum: 100))] //la dimensione si adatta allo scherno, la dimensione minima degli elementi è comunque 100
-    var body : some View {
-        ScrollView(showsIndicators: false)  {
-            LazyVGrid(columns: layout){
-                ForEach(badges) { badge in  //badges è un array di badge
-                    badge
-                        .padding()
+        HStack {
+            Image(uiImage: user.profileImage)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 110, height: 110)
+                .clipShape(Circle())
+                .overlay(Circle()
+                            .stroke(Color.black, lineWidth: 4))
+                .padding()
+            VStack {
+                Text(user.userName)
+                    .font(.title)
+                    .bold()
+                HStack(spacing: 15) {
+                    Text("Liv \(user.level)")
+                        .font(.title3)
+                        .bold()
+                    PointsIcon(punti: user.points)
                 }
             }
-            
         }
-        .frame(minHeight: 280,maxHeight: 300)
     }
-       
 }
 
-struct Badge : Identifiable, View  {
+
+//rettanglo colorato con i punti
+struct PointsIcon : View {
+    var punti : Int
+    var body : some View {
+        RoundedRectangle(cornerRadius: 15)
+            .frame(width: 90, height: 60)
+            .foregroundColor(.accentColor.opacity(0.7))
+            .overlay(Text("\(punti) pt")
+                        .font(.title2)
+                        .bold())
+    }
+}
+
+struct BadgeListView : View {
+    var body : some View {
+        List {
+            ForEach(badges) { badge in
+                BadgeView(badge: badge)
+                    .padding(7)
+            }
+        }
+    }
+}
+
+
+struct BadgeView : View {
+    var badge : Badge
+    var body : some View {
+        HStack(spacing: 40) {
+            VStack {
+                Image(uiImage: badge.image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50)
+                Text("\(badge.requiredPoints) pt")
+            }
+            VStack {
+                Text(badge.name)
+                    .font(.title2)
+            }
+        }
+    }
+}
+
+
+
+//PREVIEW
+struct UserProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        UserProfileView()
+    }
+}
+
+
+
+/*
+struct BadgeView : Identifiable, View  {
     var icon : String
     var description : String
     var id  = UUID()
@@ -70,71 +133,17 @@ struct Badge : Identifiable, View  {
 }
 
 
-
-//Immagine, nome, livello e punti
-struct ProfileBar : View {
-    var body : some View {
-        HStack {
-            ProfileImage()
-            VStack {
-                Text("Nome utente")
-                    .font(.title)
-                    .bold()
-                HStack(spacing: 15) {
-                    Text("Liv 8")
-                        .font(.title3)
-                        .bold()
-                    PointsIcon(punti: 100)
-                }
-            }
-        }
-    }
-}
-
-//rettanglo colorato con i punti
-struct PointsIcon : View {
-    var punti : Int
-    var body : some View {
-        RoundedRectangle(cornerRadius: 15)
-            .frame(width: 90, height: 60)
-            .foregroundColor(.green.opacity(0.5))
-            .overlay(Text("\(punti) pt")
-                        .font(.title2)
-                        .bold())
-    }
-}
-
-//immagine di profilo
-struct ProfileImage : View {
-    var body : some View {
-        Image(systemName: "person.fill")
-            .resizable()
-            .scaledToFill()
-            .frame(width: 120, height: 120)
-            .clipShape(Circle())
-            .overlay(Circle()
-                        .stroke(Color.black, lineWidth: 4))
-            .padding()
-    }
-}
-
 //array di priva con i badge
-var badges : [Badge] = [
-    Badge.init(icon:  "heart", description: "cuore"),
-    Badge.init(icon: "heart.fill", description: "cuore pieno"),
-    Badge.init(icon: "cart", description: "carrello"),
-    Badge.init(icon: "cart.fill", description: "carrello pieno"),
-    Badge.init(icon: "person", description: "user"),
-    Badge.init(icon:  "heart", description: "cuore1"),
-    Badge.init(icon: "heart.fill", description: "cuore pieno1"),
-    Badge.init(icon: "cart", description: "carrello1"),
-    Badge.init(icon: "cart.fill", description: "carrello pieno1"),
-    Badge.init(icon: "person", description: "user1")
+var badgess : [BadgeView] = [
+    BadgeView.init(icon:  "heart", description: "cuore"),
+    BadgeView.init(icon: "heart.fill", description: "cuore pieno"),
+    BadgeView.init(icon: "cart", description: "carrello"),
+    BadgeView.init(icon: "cart.fill", description: "carrello pieno"),
+    BadgeView.init(icon: "person", description: "user"),
+    BadgeView.init(icon:  "heart", description: "cuore1"),
+    BadgeView.init(icon: "heart.fill", description: "cuore pieno1"),
+    BadgeView.init(icon: "cart", description: "carrello1"),
+    BadgeView.init(icon: "cart.fill", description: "carrello pieno1"),
+    BadgeView.init(icon: "person", description: "user1")
 ]
-
-
-struct UserProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserProfileView()
-    }
-}
+ */
