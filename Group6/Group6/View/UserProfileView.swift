@@ -10,7 +10,7 @@ import SwiftUI
 
 struct UserProfileView: View {
     @State var isPresented : Bool = false
-    @State var user : User = User(isOperator: false, userName: "Francesca", level: 7, points: 102, profileImage: UIImage(named: "profile image")!, cupons: [], reportings: [])
+    @State var user : User = User(isOperator: false, userName: "Francesca", level: 7, points: 102, profileImage: UIImage(named: "profile image")!, reportings: [])
     
     var body: some View {
         NavigationView{
@@ -47,7 +47,7 @@ struct ProfileBar : View {
             Image(uiImage: user.profileImage)
                 .resizable()
                 .scaledToFill()
-                .frame(width: 120, height: 120)
+                .frame(width: 110, height: 110)
                 .clipShape(Circle())
                 .overlay(Circle()
                             .stroke(Color.black, lineWidth: 4))
