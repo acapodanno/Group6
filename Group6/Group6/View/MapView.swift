@@ -1,45 +1,44 @@
 import SwiftUI
 import MapKit
+import CoreLocation
 
 struct MapView: View
 {
     @State var detailViewShown = false
+    @State var currItem : ReportModel = ReportModel(id: 0, description: "", status: "", latitude: 0, longitude: 0, createdAt: Date.now)
     @StateObject var locationManager = LocationManager()
     
-    @State var currItem = MapPoint(name: "", lat: Double(0), long: Double(0))
-
-    /*
-     TODO: punti presi da campi 'latitude' e 'longitude' di Report, il nome può essere la via + numero civico o area di interesse (es. campus universitario, palestra, ecc)
-     */
-    private let places = [
-        MapPoint(name: "A point in the campus", lat: 40.771111, long:  14.790556),
-        MapPoint(name: "Another different point", lat: 40.7720, long:  14.79051)
-    ]
+    var reportApi = ReportApi()
+    var reports : [ReportModel] = []
+    
+    init()
+    {
+        //reports = reportApi.getAllReport()
+    }
     
     var body: some View
     {
         VStack
         {
-            Map(coordinateRegion: $locationManager.region, annotationItems: places)
+            Map(coordinateRegion: $locationManager.region, annotationItems: reports)
             {
-                place in
-                MapAnnotation(coordinate: place.coords)
+                report in
+                MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: report.latitude, longitude: report.longitude))
                 {
                     Button(action: {
-                        currItem = place
+                        currItem = report
                         detailViewShown.toggle()
-                        print("item: \(currItem.name)")
                     })
                     {
                         Image(systemName: "mappin.circle.fill")
                             .font(.title)
-                                .foregroundColor(.red)
+                            .foregroundColor(.red)
                     }
                 }
             }
         }
         .sheet(isPresented: $detailViewShown, onDismiss: {}) {
-            // TODO: add reference to ReportDetailView
+            // TODO: serve l'endpoint API "GET single report"
             //ReportDetailView(item: $currItem)
         }
     }

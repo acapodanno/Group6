@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct Group6App: App {
+    
     var body: some Scene {
         WindowGroup {
             TabNavigationView()
