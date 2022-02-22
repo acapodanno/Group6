@@ -42,15 +42,18 @@ struct SettingsLabel : View {
 struct BadgesList : View {
     var layout = [GridItem(.adaptive(minimum: 100))] //la dimensione si adatta allo scherno, la dimensione minima degli elementi è comunque 100
     var body : some View {
-        ScrollView {
+        ScrollView(showsIndicators: false)  {
             LazyVGrid(columns: layout){
                 ForEach(badges) { badge in  //badges è un array di badge
                     badge
                         .padding()
                 }
             }
+            
         }
+        .frame(minHeight: 280,maxHeight: 300)
     }
+       
 }
 
 struct Badge : Identifiable, View  {
