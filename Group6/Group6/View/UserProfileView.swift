@@ -9,27 +9,26 @@ import SwiftUI
 
 
 struct UserProfileView: View {
-    @State var nomeUtente : String = "Genny"
     @State var isPresented : Bool = false
-    @State private var profileImage = UIImage(named: "profile image")!
+    @State var user : User = User(isOperator: false, userName: "Francesca", level: 7, points: 102, profileImage: UIImage(named: "profile image")!, cupons: [], reportings: [])
     
     var body: some View {
         NavigationView{
             Form {
                 ProfileBar(isPresented: $isPresented,
-                           nomeUtente: $nomeUtente,
-                           profileImage: $profileImage)
+                           nomeUtente: $user.userName,
+                           user: $user)
                 Section(header: Text("Badges").font(.title2)) {
                     BadgesList()
                 }
             }
             .navigationTitle(Text("Profile"))
             .navigationBarItems(trailing: NavigationLink(
-                destination: SettingsView(nomeUtente: $nomeUtente)) {
+                destination: SettingsView(nomeUtente: $user.userName)) {
                     Label("", systemImage: "gear")})
             
             .sheet(isPresented: $isPresented) {
-                PhotoPicker(profileImage: $profileImage)
+                PhotoPicker(profileImage: $user.profileImage)
             } //TODO: dopo aver scelto la foto non si aprono le impostazioni wtf
         }
     }
@@ -41,11 +40,11 @@ struct UserProfileView: View {
 struct ProfileBar : View {
     @Binding var isPresented : Bool
     @Binding var nomeUtente : String
-    @Binding var profileImage : UIImage
+    @Binding var user : User
     
     var body : some View {
         HStack {
-            Image(uiImage: profileImage)
+            Image(uiImage: user.profileImage)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 120, height: 120)
@@ -57,14 +56,14 @@ struct ProfileBar : View {
                     isPresented = true  //quando si clicca sull'immagine si apre lo sheet col picker
                 }
             VStack {
-                Text(nomeUtente)
+                Text(user.userName)
                     .font(.title)
                     .bold()
                 HStack(spacing: 15) {
-                    Text("Liv 8")
+                    Text("Liv \(user.level)")
                         .font(.title3)
                         .bold()
-                    PointsIcon(punti: 100)
+                    PointsIcon(punti: user.points)
                 }
             }
         }
@@ -115,6 +114,14 @@ struct PointsIcon : View {
 }
 
 
+struct UserProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        UserProfileView()
+    }
+}
+
+
+
 //array di priva con i badge
 var badges : [Badge] = [
     Badge.init(icon:  "heart", description: "cuore"),
@@ -128,10 +135,3 @@ var badges : [Badge] = [
     Badge.init(icon: "cart.fill", description: "carrello pieno1"),
     Badge.init(icon: "person", description: "user1")
 ]
-
-
-struct UserProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserProfileView(nomeUtente: "Nome utente")
-    }
-}

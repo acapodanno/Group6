@@ -17,7 +17,8 @@ struct User : Identifiable {
     var level : Int  //livello
     var points : Int  //punti accumulati
     var profileImage : UIImage  //immagine di profilo
-    var cupons : [Coupon]  //cupon accumulati
+    //TODO: var cupons : [Coupon]  //cupon accumulati
     var reportings : [Report]  //report effettuati
     //TODO: var badges : [Badge]  //badge accumulati
 }
+

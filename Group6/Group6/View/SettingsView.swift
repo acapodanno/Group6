@@ -23,7 +23,7 @@ struct SettingsView: View {
 }
 
 struct SettingsView_Previews: PreviewProvider {
-    @State static var bibbi : String = "Genny Savastano"
+    @State static var bibbi : String = "Nome Utente"
     static var previews: some View {
         SettingsView(nomeUtente: $bibbi)
     }

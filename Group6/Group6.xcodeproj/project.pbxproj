@@ -149,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				97260EEF27BF9D8600AF6FF9 /* UserProfileView.swift */,
+				97974BED27C11DC4000AB965 /* SettingsView.swift */,
 				2AB7ECB027C01AA9006CD0EE /* CouponDetailView.swift */,
 				2AB7ECAE27C01AA3006CD0EE /* AddReportView.swift */,
 				2AB7ECB227C01AAE006CD0EE /* ImagePickerView.swift */,
@@ -156,7 +157,6 @@
 				2AB7ECB627C01AC1006CD0EE /* ReportDetailView.swift */,
 				2AB7ECBC27C01AE3006CD0EE /* StoreView.swift */,
 				2AB7ECB427C01AB3006CD0EE /* MapView.swift */,
-				97974BED27C11DC4000AB965 /* SettingsView.swift */,
 				97974BEF27C13779000AB965 /* TabBarView.swift */,
 			);
 			path = View;
