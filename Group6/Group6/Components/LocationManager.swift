@@ -2,6 +2,7 @@ import Foundation
 import CoreLocation
 import Combine
 import MapKit
+import Contacts
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate
 {
@@ -10,6 +11,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate
     @Published var locationStatus: CLAuthorizationStatus?
     @Published var placeMark: CLPlacemark?
     @Published var region = MKCoordinateRegion()
+    @Published var address = ""
 
     override init()
     {
@@ -50,6 +52,10 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate
                 (placemarks, error) in
                 if error == nil {
                     self.placeMark = placemarks?[0]
+                    let formatter = CNPostalAddressFormatter()
+                    if let paddr = self.placeMark?.postalAddress {
+                        self.address = formatter.string(from: paddr)
+                    }
                 }
                 else {
                     print("Error converting location")
