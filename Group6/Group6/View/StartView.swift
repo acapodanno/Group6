@@ -9,9 +9,6 @@ import SwiftUI
 
 struct StartView: View {
     
-    @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest<LoggedUser>(entity: LoggedUser.entity(), sortDescriptors: []) var allItems : FetchedResults<LoggedUser>
-    
     @State var operUsername = ""
     @State var operPassword = ""
     @State var operClicked = false

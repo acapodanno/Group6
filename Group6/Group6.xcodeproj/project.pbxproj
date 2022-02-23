@@ -28,6 +28,11 @@
 		85BC913B27C421680099CC2D /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC913A27C421680099CC2D /* ReportModel.swift */; };
 		85BC913E27C42DC30099CC2D /* Utills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC913D27C42DC30099CC2D /* Utills.swift */; };
 		85BC914127C4F5460099CC2D /* CouponApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC914027C4F5460099CC2D /* CouponApi.swift */; };
+		85BC914A27C6C4B50099CC2D /* LoginPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC914927C6C4B40099CC2D /* LoginPageModel.swift */; };
+		85BC914C27C6C4E50099CC2D /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC914B27C6C4E50099CC2D /* LoginPage.swift */; };
+		85BC915227C6C7DD0099CC2D /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC915127C6C7DD0099CC2D /* CustomCorners.swift */; };
+		85BC915427C6C8460099CC2D /* OnBoardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC915327C6C8460099CC2D /* OnBoardingPage.swift */; };
+		85BC915727C6EE970099CC2D /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC915627C6EE970099CC2D /* UserApi.swift */; };
 		85E8C07827B534AD00BB0B3C /* Group6App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8C07727B534AD00BB0B3C /* Group6App.swift */; };
 		85E8C07A27B534AD00BB0B3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E8C07927B534AD00BB0B3C /* ContentView.swift */; };
 		85E8C07C27B534B000BB0B3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85E8C07B27B534B000BB0B3C /* Assets.xcassets */; };
@@ -85,6 +90,14 @@
 		85BC913A27C421680099CC2D /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
 		85BC913D27C42DC30099CC2D /* Utills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utills.swift; sourceTree = "<group>"; };
 		85BC914027C4F5460099CC2D /* CouponApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponApi.swift; sourceTree = "<group>"; };
+		85BC914927C6C4B40099CC2D /* LoginPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageModel.swift; sourceTree = "<group>"; };
+		85BC914B27C6C4E50099CC2D /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		85BC914E27C6C5400099CC2D /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-SemiBold.ttf"; path = "../../../../Downloads/Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		85BC914F27C6C5400099CC2D /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Regular.ttf"; path = "../../../../Downloads/Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		85BC915027C6C5400099CC2D /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Bold.ttf"; path = "../../../../Downloads/Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		85BC915127C6C7DD0099CC2D /* CustomCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
+		85BC915327C6C8460099CC2D /* OnBoardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPage.swift; sourceTree = "<group>"; };
+		85BC915627C6EE970099CC2D /* UserApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		85E8C07427B534AD00BB0B3C /* Group6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85E8C07727B534AD00BB0B3C /* Group6App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group6App.swift; sourceTree = "<group>"; };
 		85E8C07927B534AD00BB0B3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -151,6 +164,7 @@
 				2AB7ECCE27C01B3A006CD0EE /* Report.swift */,
 				97E0E71727C3FCE0006D12FE /* User.swift */,
 				9743B54327C544A10024185B /* Badge.swift */,
+				85BC914927C6C4B40099CC2D /* LoginPageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +183,9 @@
 				2AB7ECB427C01AB3006CD0EE /* MapView.swift */,
 				2A3C48AB27C6783200EC63CE /* StartView.swift */,
 				2A3C48B027C67B8700EC63CE /* TabNavigationView.swift */,
+				85BC914B27C6C4E50099CC2D /* LoginPage.swift */,
+				85BC915127C6C7DD0099CC2D /* CustomCorners.swift */,
+				85BC915327C6C8460099CC2D /* OnBoardingPage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,6 +193,7 @@
 		85BC911727C3A11E0099CC2D /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				85BC915527C6EE860099CC2D /* User */,
 				85BC913F27C4F5370099CC2D /* Coupon */,
 				85BC911927C3A1350099CC2D /* File */,
 				85BC911827C3A12E0099CC2D /* Report */,
@@ -216,6 +234,24 @@
 			path = Coupon;
 			sourceTree = "<group>";
 		};
+		85BC914D27C6C5180099CC2D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				85BC915027C6C5400099CC2D /* Raleway-Bold.ttf */,
+				85BC914F27C6C5400099CC2D /* Raleway-Regular.ttf */,
+				85BC914E27C6C5400099CC2D /* Raleway-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		85BC915527C6EE860099CC2D /* User */ = {
+			isa = PBXGroup;
+			children = (
+				85BC915627C6EE970099CC2D /* UserApi.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		85E8C06B27B534AD00BB0B3C = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +276,7 @@
 		85E8C07627B534AD00BB0B3C /* Group6 */ = {
 			isa = PBXGroup;
 			children = (
+				85BC914D27C6C5180099CC2D /* Fonts */,
 				85BC913C27C42DB20099CC2D /* Utils */,
 				85BC911727C3A11E0099CC2D /* Api */,
 				2A3A49D927C0EA6A0052D2D8 /* Info.plist */,
@@ -409,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85BC914C27C6C4E50099CC2D /* LoginPage.swift in Sources */,
 				85BC913E27C42DC30099CC2D /* Utills.swift in Sources */,
 				85E8C07A27B534AD00BB0B3C /* ContentView.swift in Sources */,
 				2AB7ECB527C01AB3006CD0EE /* MapView.swift in Sources */,
@@ -424,13 +462,17 @@
 				85BC914127C4F5460099CC2D /* CouponApi.swift in Sources */,
 				97E0E71E27C41B61006D12FE /* PhotoPicker.swift in Sources */,
 				85BC913127C3A5A40099CC2D /* FileApi.swift in Sources */,
+				85BC915227C6C7DD0099CC2D /* CustomCorners.swift in Sources */,
 				85BC912F27C3A4060099CC2D /* ReportApi.swift in Sources */,
 				2AB7ECB927C01AC6006CD0EE /* ReportsListView.swift in Sources */,
 				2AB7ECC827C01AF8006CD0EE /* Coordinator.swift in Sources */,
 				2A3C48B127C67B8700EC63CE /* TabNavigationView.swift in Sources */,
 				2AB7ECCB27C01AF8006CD0EE /* LocationManager.swift in Sources */,
 				97E0E71827C3FCE0006D12FE /* User.swift in Sources */,
+				85BC915427C6C8460099CC2D /* OnBoardingPage.swift in Sources */,
 				2A3C48AC27C6783200EC63CE /* StartView.swift in Sources */,
+				85BC914A27C6C4B50099CC2D /* LoginPageModel.swift in Sources */,
+				85BC915727C6EE970099CC2D /* UserApi.swift in Sources */,
 				97E0E71A27C414EA006D12FE /* CouponModel.swift in Sources */,
 				85BC913327C3A8080099CC2D /* ConfigUri.swift in Sources */,
 				2AB7ECC727C01AF8006CD0EE /* CouponStore.swift in Sources */,

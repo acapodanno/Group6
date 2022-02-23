@@ -12,7 +12,7 @@ struct Group6App: App {
     
     var body: some Scene {
         WindowGroup {
-            StartView().environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+          ContentView()
         }
     }
 }

@@ -2,6 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Raleway-Bold</string>
+		<string>Raleway-Regular</string>
+		<string>Raleway-SemiBold</string>
+	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIImageName</key>
+		<string>TrashRadarLogo</string>
+		<key>UIColorName</key>
+		<string>AccentColor</string>
+	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>This app requires camera access</string>
 	<key>UIBackgroundModes</key>
