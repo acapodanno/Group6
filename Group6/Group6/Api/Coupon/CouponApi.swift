@@ -16,7 +16,7 @@ class CouponApi{
 
     var semaphore = DispatchSemaphore (value: 0)
 
-    var request = URLRequest(url: URL(string: "http://192.168.1.52:8081/get-all-coupon")!,timeoutInterval: Double.infinity)
+    var request = URLRequest(url: URL(string: host+"get-all-coupon")!,timeoutInterval: Double.infinity)
     request.httpMethod = "GET"
 
     let task = URLSession.shared.dataTask(with: request) { data, response, error in
