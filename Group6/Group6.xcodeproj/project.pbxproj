@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A3C48AA27C6779800EC63CE /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C48A927C6779800EC63CE /* PersistenceController.swift */; };
+		2A3C48AC27C6783200EC63CE /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C48AB27C6783200EC63CE /* StartView.swift */; };
+		2A3C48AF27C679D500EC63CE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C48AD27C679D500EC63CE /* Model.xcdatamodeld */; };
+		2A3C48B127C67B8700EC63CE /* TabNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C48B027C67B8700EC63CE /* TabNavigationView.swift */; };
 		2AB7ECAF27C01AA3006CD0EE /* AddReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECAE27C01AA3006CD0EE /* AddReportView.swift */; };
 		2AB7ECB127C01AA9006CD0EE /* CouponDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECB027C01AA9006CD0EE /* CouponDetailView.swift */; };
 		2AB7ECB327C01AAE006CD0EE /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECB227C01AAE006CD0EE /* ImagePickerView.swift */; };
@@ -14,10 +18,8 @@
 		2AB7ECB727C01AC1006CD0EE /* ReportDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECB627C01AC1006CD0EE /* ReportDetailView.swift */; };
 		2AB7ECB927C01AC6006CD0EE /* ReportsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECB827C01AC6006CD0EE /* ReportsListView.swift */; };
 		2AB7ECBD27C01AE3006CD0EE /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECBC27C01AE3006CD0EE /* StoreView.swift */; };
-		2AB7ECC627C01AF8006CD0EE /* NotificationTestTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC027C01AF8006CD0EE /* NotificationTestTargetView.swift */; };
 		2AB7ECC727C01AF8006CD0EE /* CouponStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC127C01AF8006CD0EE /* CouponStore.swift */; };
 		2AB7ECC827C01AF8006CD0EE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC227C01AF8006CD0EE /* Coordinator.swift */; };
-		2AB7ECCA27C01AF8006CD0EE /* NotificationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC427C01AF8006CD0EE /* NotificationTestView.swift */; };
 		2AB7ECCB27C01AF8006CD0EE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECC527C01AF8006CD0EE /* LocationManager.swift */; };
 		2AB7ECD127C01B3A006CD0EE /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7ECCE27C01B3A006CD0EE /* Report.swift */; };
 		85BC912F27C3A4060099CC2D /* ReportApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC912E27C3A4060099CC2D /* ReportApi.swift */; };
@@ -36,7 +38,6 @@
 		97260EF027BF9D8600AF6FF9 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97260EEF27BF9D8600AF6FF9 /* UserProfileView.swift */; };
 		9743B54427C544A10024185B /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9743B54327C544A10024185B /* Badge.swift */; };
 		97974BEE27C11DC4000AB965 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97974BED27C11DC4000AB965 /* SettingsView.swift */; };
-		97974BF027C13779000AB965 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97974BEF27C13779000AB965 /* TabBarView.swift */; };
 		97E0E71827C3FCE0006D12FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E0E71727C3FCE0006D12FE /* User.swift */; };
 		97E0E71A27C414EA006D12FE /* CouponModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E0E71927C414EA006D12FE /* CouponModel.swift */; };
 		97E0E71C27C41594006D12FE /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E0E71B27C41594006D12FE /* NotificationManager.swift */; };
@@ -62,6 +63,10 @@
 
 /* Begin PBXFileReference section */
 		2A3A49D927C0EA6A0052D2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A3C48A927C6779800EC63CE /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		2A3C48AB27C6783200EC63CE /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		2A3C48AE27C679D500EC63CE /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		2A3C48B027C67B8700EC63CE /* TabNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigationView.swift; sourceTree = "<group>"; };
 		2AB7ECAE27C01AA3006CD0EE /* AddReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReportView.swift; sourceTree = "<group>"; };
 		2AB7ECB027C01AA9006CD0EE /* CouponDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDetailView.swift; sourceTree = "<group>"; };
 		2AB7ECB227C01AAE006CD0EE /* ImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
@@ -69,10 +74,8 @@
 		2AB7ECB627C01AC1006CD0EE /* ReportDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailView.swift; sourceTree = "<group>"; };
 		2AB7ECB827C01AC6006CD0EE /* ReportsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsListView.swift; sourceTree = "<group>"; };
 		2AB7ECBC27C01AE3006CD0EE /* StoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
-		2AB7ECC027C01AF8006CD0EE /* NotificationTestTargetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTestTargetView.swift; sourceTree = "<group>"; };
 		2AB7ECC127C01AF8006CD0EE /* CouponStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponStore.swift; sourceTree = "<group>"; };
 		2AB7ECC227C01AF8006CD0EE /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		2AB7ECC427C01AF8006CD0EE /* NotificationTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTestView.swift; sourceTree = "<group>"; };
 		2AB7ECC527C01AF8006CD0EE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2AB7ECCE27C01B3A006CD0EE /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		2AB7ECCF27C01B3A006CD0EE /* CouponModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponModel.swift; sourceTree = "<group>"; };
@@ -95,7 +98,6 @@
 		97260EEF27BF9D8600AF6FF9 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		9743B54327C544A10024185B /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		97974BED27C11DC4000AB965 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		97974BEF27C13779000AB965 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		97E0E71727C3FCE0006D12FE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		97E0E71927C414EA006D12FE /* CouponModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponModel.swift; sourceTree = "<group>"; };
 		97E0E71B27C41594006D12FE /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
@@ -133,10 +135,9 @@
 				2AB7ECC227C01AF8006CD0EE /* Coordinator.swift */,
 				2AB7ECC127C01AF8006CD0EE /* CouponStore.swift */,
 				2AB7ECC527C01AF8006CD0EE /* LocationManager.swift */,
-				2AB7ECC027C01AF8006CD0EE /* NotificationTestTargetView.swift */,
-				2AB7ECC427C01AF8006CD0EE /* NotificationTestView.swift */,
 				97E0E71B27C41594006D12FE /* NotificationManager.swift */,
 				97E0E71D27C41B61006D12FE /* PhotoPicker.swift */,
+				2A3C48A927C6779800EC63CE /* PersistenceController.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -166,7 +167,8 @@
 				2AB7ECB627C01AC1006CD0EE /* ReportDetailView.swift */,
 				2AB7ECBC27C01AE3006CD0EE /* StoreView.swift */,
 				2AB7ECB427C01AB3006CD0EE /* MapView.swift */,
-				97974BEF27C13779000AB965 /* TabBarView.swift */,
+				2A3C48AB27C6783200EC63CE /* StartView.swift */,
+				2A3C48B027C67B8700EC63CE /* TabNavigationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,6 +219,7 @@
 		85E8C06B27B534AD00BB0B3C = {
 			isa = PBXGroup;
 			children = (
+				2A3C48AD27C679D500EC63CE /* Model.xcdatamodeld */,
 				85E8C07627B534AD00BB0B3C /* Group6 */,
 				85E8C08727B534B000BB0B3C /* Group6Tests */,
 				85E8C09127B534B000BB0B3C /* Group6UITests */,
@@ -415,22 +418,23 @@
 				2AB7ECB727C01AC1006CD0EE /* ReportDetailView.swift in Sources */,
 				2AB7ECAF27C01AA3006CD0EE /* AddReportView.swift in Sources */,
 				9743B54427C544A10024185B /* Badge.swift in Sources */,
+				2A3C48AA27C6779800EC63CE /* PersistenceController.swift in Sources */,
 				2AB7ECBD27C01AE3006CD0EE /* StoreView.swift in Sources */,
 				97260EF027BF9D8600AF6FF9 /* UserProfileView.swift in Sources */,
-				2AB7ECC627C01AF8006CD0EE /* NotificationTestTargetView.swift in Sources */,
 				85BC914127C4F5460099CC2D /* CouponApi.swift in Sources */,
 				97E0E71E27C41B61006D12FE /* PhotoPicker.swift in Sources */,
 				85BC913127C3A5A40099CC2D /* FileApi.swift in Sources */,
 				85BC912F27C3A4060099CC2D /* ReportApi.swift in Sources */,
 				2AB7ECB927C01AC6006CD0EE /* ReportsListView.swift in Sources */,
-				2AB7ECCA27C01AF8006CD0EE /* NotificationTestView.swift in Sources */,
 				2AB7ECC827C01AF8006CD0EE /* Coordinator.swift in Sources */,
+				2A3C48B127C67B8700EC63CE /* TabNavigationView.swift in Sources */,
 				2AB7ECCB27C01AF8006CD0EE /* LocationManager.swift in Sources */,
-				97974BF027C13779000AB965 /* TabBarView.swift in Sources */,
 				97E0E71827C3FCE0006D12FE /* User.swift in Sources */,
+				2A3C48AC27C6783200EC63CE /* StartView.swift in Sources */,
 				97E0E71A27C414EA006D12FE /* CouponModel.swift in Sources */,
 				85BC913327C3A8080099CC2D /* ConfigUri.swift in Sources */,
 				2AB7ECC727C01AF8006CD0EE /* CouponStore.swift in Sources */,
+				2A3C48AF27C679D500EC63CE /* Model.xcdatamodeld in Sources */,
 				2AB7ECB127C01AA9006CD0EE /* CouponDetailView.swift in Sources */,
 				97E0E71C27C41594006D12FE /* NotificationManager.swift in Sources */,
 				85E8C07827B534AD00BB0B3C /* Group6App.swift in Sources */,
@@ -763,6 +767,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2A3C48AD27C679D500EC63CE /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2A3C48AE27C679D500EC63CE /* Model.xcdatamodel */,
+			);
+			currentVersion = 2A3C48AE27C679D500EC63CE /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 85E8C06C27B534AD00BB0B3C /* Project object */;
 }
