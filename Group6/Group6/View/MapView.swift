@@ -9,11 +9,11 @@ struct MapView: View
     @StateObject var locationManager = LocationManager()
     
     var reportApi = ReportApi()
-    var reports : [ReportModel] = []
-    
+    var reports : [ReportModel]
     init()
     {
-        //reports = reportApi.getAllReport()
+        reports = reportApi.getAllReport()
+        print(reports)
     }
     
     var body: some View
@@ -39,7 +39,7 @@ struct MapView: View
         }
         .sheet(isPresented: $detailViewShown, onDismiss: {}) {
             // TODO: serve l'endpoint API "GET single report"
-            //ReportDetailView(item: $currItem)
+            ReportDetailView(report: currItem)
         }
     }
 }

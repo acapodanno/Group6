@@ -104,10 +104,10 @@ struct AddReportView: View {
     }
     func saveReport(){
         print ("\(note)")
-        reportApi.addReport(latitude: 0, longitude: 0, description: note,address:"\(locationManager.address)")
+        reportApi.addReport(latitude: locationManager.placeMark?.location?.coordinate.latitude ?? 0, longitude: locationManager.placeMark?.location?.coordinate.longitude ?? 0, description: note,address:"\(locationManager.address)")
         
      //   if(imageArray.count < 1){
-     //       showingAlert.toggle()
+            showingAlert.toggle()
      //   }else{
             presentationMode.wrappedValue.dismiss()
             //Send to db Report("Location: location, Date: date, photo : photo, note : note ")
