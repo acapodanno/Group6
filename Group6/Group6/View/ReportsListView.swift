@@ -22,18 +22,28 @@ struct ReportListView: View {
     }
     var body: some View {
         NavigationView{
-            List(segnalazioni){
-                segnalazione in
-                NavigationLink(destination: ReportDetailView(report: segnalazione)){
-                SegCell(segnalazione: segnalazione)
-                }
+            ScrollView(.vertical, showsIndicators: false){
+                        // Displaying Products...
+                        VStack(spacing: 15){
+                            
+                            ForEach (segnalazioni){
+                                segnalazione in
+                                NavigationLink(destination: ReportDetailView(report: segnalazione)){
+                                SegCell(segnalazione: segnalazione)
+                                }
+                        }
+                        .padding(.top,25)
+                        .padding(.horizontal)
+           
             }.navigationTitle(Text("Report List"))
             .navigationBarItems(trailing : Button (action: {
                 showingAddView.toggle()
             }){
                 Image(systemName: "plus.circle").font(.title2)
-            })
-        }.sheet(isPresented: $showingAddView, onDismiss: {}) {
+            })}
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .sheet(isPresented: $showingAddView, onDismiss: {}) {
             AddReportView()
         }
     }
@@ -49,13 +59,31 @@ struct ReportListView: View {
         var segnalazione : ReportModel
         let location = CLLocation(latitude: -22.963451, longitude: -43.198242)
         var body: some View {
-            HStack{
-                Image(systemName : "mappin")
-                VStack(alignment: .leading, spacing: 2.0){
-                    Text(segnalazione.description)
-                    Text("\(segnalazione.address)").font(.footnote)
-                        .foregroundColor(Color.gray)
-                }
-            }.frame(height: 60.0)
+            HStack(spacing: 15){
+                        VStack(alignment: .leading, spacing: 8) {
+                            
+                            Text("Report n°\(segnalazione.id)")
+                                .font(.custom(customFont, size: 18).bold())
+                                .lineLimit(1)
+                                .foregroundColor(Color(.white))
+                            
+                            Text(segnalazione.address)
+                                .font(.custom(customFont, size: 15))
+                                .fontWeight(.semibold)
+                                .foregroundColor(Color(.white))
+                            
+                            Text("\(segnalazione.createdAt.formatted())")
+                                .font(.custom(customFont, size: 13))
+                                .foregroundColor(Color(.white))
+                        }
+                    }
+                    .padding(.horizontal,10)
+                    .padding(.vertical,10)
+                    .frame(maxWidth: .infinity,alignment: .leading)
+                    .background(
+                    
+                        Color("AccentColor")
+                    )
+                    .cornerRadius(10)
         }
     }
