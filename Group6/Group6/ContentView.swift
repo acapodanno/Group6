@@ -38,7 +38,7 @@ struct SplashScreen: View{
     
     @Environment(\.colorScheme) var scheme
     
-    @State var removeSplashScreen: Bool = false
+    @State var removeSplashScreen: Bool = true
     
     var body: some View{
         
