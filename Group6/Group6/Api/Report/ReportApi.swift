@@ -14,10 +14,10 @@ class ReportApi{
 
 
 
-func updateStatuSolvedReport(){
+    func updateStatuSolvedReport(id: Int32){
     let sem = DispatchSemaphore (value: 0)
 
-    var req = URLRequest(url: URL(string: host+"/update-status-solved-report/1")!,timeoutInterval: Double.infinity)
+    var req = URLRequest(url: URL(string: host+"/update-status-solved-report/\(id)")!,timeoutInterval: Double.infinity)
     req.httpMethod = "PUT"
     let task = URLSession.shared.dataTask(with: req) { data, response, error in
       guard let data = data else {
@@ -87,10 +87,10 @@ func getAllReport() -> [ReportModel]{
     return reportsModel
 
 }
-func updateStatuTakenReport(){
+    func updateStatuTakenReport(id: Int32){
     let sem = DispatchSemaphore (value: 0)
 
-    var req = URLRequest(url: URL(string: host+"/update-status-taken-report/1")!,timeoutInterval: Double.infinity)
+    var req = URLRequest(url: URL(string: host+"/update-status-taken-report/\(id)")!,timeoutInterval: Double.infinity)
     req.httpMethod = "PUT"
     let task = URLSession.shared.dataTask(with: req) { data, response, error in
       guard let data = data else {
