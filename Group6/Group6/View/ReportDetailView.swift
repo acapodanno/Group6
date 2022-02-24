@@ -31,22 +31,18 @@ struct ReportDetailView: View {
                 }
                 Section(header: Text("Photo")){
                     HStack{
-                        ScrollView(.horizontal) {
-                            ForEach(imageArray, id: \.self) {selectedImage in
-                                if selectedImage != nil {
-                                    Image(uiImage: selectedImage!)
-                                        .resizable()
-                                        .frame(width:100, height: 100)
-                                } else {
-                                    Image(systemName: "rectangle.fill")
-                                        .resizable()
-                                        .foregroundColor(Color("AccentColor"))
-                                        .frame(width: 100, height: 100)
+                                    AsyncImage(
+                                       url:URL(string:"https://images.unsplash.com/photo-1605600659908-0ef719419d41?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80")!,
+                                       placeholder: { Text("Loading ...") },
+                                       image: { Image(uiImage: $0).resizable() }
+                                    )
+                                    .frame(width: 128, height: 180)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                
                                 }
-                            }
-                        }
-                        
-                    }
+
+                    .frame(width: 128, height: 180)
+
                 }
                 Section(header: Text("Note")){
                     HStack{
