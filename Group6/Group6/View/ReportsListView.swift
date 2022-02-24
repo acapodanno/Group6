@@ -61,12 +61,13 @@ struct ReportListView: View {
         var body: some View {
             HStack(spacing: 15){
                         VStack(alignment: .leading, spacing: 8) {
-                            
+                            HStack{
+                                Image(systemName : "mappin").foregroundColor(.white)
                             Text("Report n°\(segnalazione.id)")
                                 .font(.custom(customFont, size: 18).bold())
                                 .lineLimit(1)
                                 .foregroundColor(Color(.white))
-                            
+                            }
                             Text(segnalazione.address)
                                 .font(.custom(customFont, size: 15))
                                 .fontWeight(.semibold)
