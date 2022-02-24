@@ -30,7 +30,6 @@ class LoginPageModel: ObservableObject {
     func Login(){
 
         withAnimation{
-            userId = userApi.signin(email: email, password: password).id
             log_Status = true
         }
     }
