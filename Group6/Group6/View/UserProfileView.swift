@@ -9,11 +9,8 @@ import SwiftUI
 
 
 struct UserProfileView: View {
-    @State var user : User
-    var userApi:UserApi = UserApi()
-    init(){
-        self.user = userApi.getUserById(id: 1)
-    }
+    @State var user : User = UserApi().getUserById(id: UserDefaults.standard.integer(forKey: "userId"))
+
     var body: some View {
         NavigationView{
             Form {

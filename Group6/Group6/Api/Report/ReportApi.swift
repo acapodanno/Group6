@@ -74,7 +74,6 @@ func getAllReport() -> [ReportModel]{
                             reportsModel.append (ReportModel(id:id,description: description,status: statusName,latitude: latitude,longitude: longitude,createdAt: date,address: address))
                             
                         }
-                        print(reportsModel)
                     }
         }catch{
             print("Error!")

@@ -11,9 +11,12 @@ import SwiftUI
 struct ReportDetailView: View {
     
     @State var imageArray : [UIImage?] = []
+    @StateObject var lum = LoginPageModel()
+    var report : ReportModel
+    var loggedUser = UserApi().getUserById(id: UserDefaults.standard.integer(forKey: "userId"))
     
-    let report : ReportModel
     var body: some View {
+        VStack {
             Form{
                 Section(header: Text("Location")){
                     HStack{
@@ -31,18 +34,18 @@ struct ReportDetailView: View {
                 }
                 Section(header: Text("Photo")){
                     HStack{
-                                    AsyncImage(
-                                       url:URL(string:"https://images.unsplash.com/photo-1605600659908-0ef719419d41?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80")!,
-                                       placeholder: { Text("Loading ...") },
-                                       image: { Image(uiImage: $0).resizable() }
-                                    )
-                                    .frame(width: 128, height: 180)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                                
-                                }
-
+                        AsyncImage(
+                            url:URL(string:"https://images.unsplash.com/photo-1605600659908-0ef719419d41?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80")!,
+                            placeholder: { Text("Loading ...") },
+                            image: { Image(uiImage: $0).resizable() }
+                        )
+                            .frame(width: 128, height: 180)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                        
+                    }
+                    
                     .frame(width: 128, height: 180)
-
+                    
                 }
                 Section(header: Text("Note")){
                     HStack{
@@ -50,13 +53,34 @@ struct ReportDetailView: View {
                         Spacer()
                         Image(systemName: "note.text")
                     }
-                }.navigationTitle(Text("Report Detail"))
+                }
+                
+                if loggedUser.isOperator {
+                    
+                    Section(footer:
+                                VStack {
+                        Button(action: {}) {
+                            Text("Mark as taken")
+                                .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        Button(action: {}) {
+                            Text("Mark as solved")
+                                .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(.borderedProminent)
+                    }) {
+                        EmptyView()
+                    }
+                }
+            }
+            .navigationTitle(Text("Report Detail"))
         }
     }
 }
 
 struct ReportDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportDetailView(report: ReportModel(id: 0, description: "", status: "", latitude: 0, longitude: 0, createdAt: Date(),address: ""))
+        ReportDetailView(report: ReportModel(id: 0, description: "", status: "", latitude: 0, longitude: 0, createdAt: Date.now, address: ""))
     }
 }

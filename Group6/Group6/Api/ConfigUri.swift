@@ -6,6 +6,6 @@
 //
 
 import Foundation
-let host = "http://192.168.1.52:8081/"
-//let host = "https://app-trashradar.herokuapp.com/"
+//let host = "http://192.168.1.52:8081/"
+let host = "https://app-trashradar.herokuapp.com/"
 
