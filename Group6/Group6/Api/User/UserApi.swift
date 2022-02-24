@@ -33,7 +33,7 @@ class UserApi{
     semaphore.wait()
     }
     
-    func signin(email:String,password:String){
+    func signin(email:String,password:String)-> User{
         
         var semaphore = DispatchSemaphore (value: 0)
 
@@ -52,6 +52,7 @@ class UserApi{
 
         task.resume()
         semaphore.wait()
+        return User(isOperator: false, userName: "Shark73", level: 2, points: 50, profileImage: nil, reportings: [])
 
     }
 

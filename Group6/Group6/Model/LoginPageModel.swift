@@ -21,11 +21,14 @@ class LoginPageModel: ObservableObject {
     @Published var registerUser: Bool = false
     @Published var re_Enter_Password: String = ""
     @Published var showReEnterPassword: Bool = false
-    
+    @AppStorage("id") var userId: Int = 0
     @AppStorage("log_Status") var log_Status: Bool = false
+        
+    
     // Login Call...
     func Login(){
-        userApi.signin(email: email, password: password)
+        userApi.signin(email: email, password: password).id
+
         withAnimation{
                     log_Status = true
         }

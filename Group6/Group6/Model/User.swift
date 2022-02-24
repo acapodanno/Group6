@@ -16,7 +16,7 @@ struct User : Identifiable {
     var userName : String  //nome utente
     var level : Int  //livello
     var points : Int  //punti accumulati
-    var profileImage : UIImage  //immagine di profilo
+    var profileImage : UIImage?  //immagine di profilo
     //var cupons : [Coupon]  //cupon accumulati
     var reportings : [Report]  //report effettuati
     //var badges : [Badge]  //badge accumulati

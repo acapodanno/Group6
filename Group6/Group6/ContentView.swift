@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("log_Status") var log_Status: Bool = false
+    @AppStorage("id") var userId: Int = 0
 
     var body: some View {
         Group{
