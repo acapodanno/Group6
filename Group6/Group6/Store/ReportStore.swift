@@ -8,8 +8,17 @@
 import Foundation
 class ReportStore: ObservableObject {
     @Published var reportsList: [ReportModel] = ReportApi().getAllReport();
+    
+    init()
+    {
+        restoreReportAll()
+    }
 
     func restoreReportAll(){
         reportsList = ReportApi().getAllReport();
+    }
+    
+    func add(report: ReportModel) {
+        reportsList.append(report)
     }
 }

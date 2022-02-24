@@ -8,19 +8,13 @@ struct MapView: View
     @State var currItem : ReportModel = ReportModel(id: 0, description: "", status: "", latitude: 0, longitude: 0, createdAt: Date.now,address: "")
     @StateObject var locationManager = LocationManager()
     
-    var reportApi = ReportApi()
-    var reports : [ReportModel]
-    init()
-    {
-        reports = reportApi.getAllReport()
-        print(reports)
-    }
+    @StateObject var reportStore = ReportStore()
     
     var body: some View
     {
         VStack
         {
-            Map(coordinateRegion: $locationManager.region, annotationItems: reports)
+            Map(coordinateRegion: $locationManager.region, annotationItems: reportStore.reportsList)
             {
                 report in
                 MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: report.latitude, longitude: report.longitude))
