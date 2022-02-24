@@ -12,6 +12,14 @@ struct TabNavigationView: View
     // gestore notifiche
     @StateObject var notificationManager = NotificationManager()
     @StateObject var locationManager = LocationManager()
+    @Namespace var animation
+    @State var currentTab: Tab = .Reports
+    var tabBarIcon: TabBarIcon = TabBarIcon()
+    // Hiding Tab Bar...
+    init(){
+        UITabBar.appearance().isHidden = true
+    }
+    var systemName = "megaphone.fill"
     
     var body: some View {
         
@@ -20,41 +28,57 @@ struct TabNavigationView: View
         // notifica di tipo "proximity": usata per avvertire l'utente
         // che si trova in un area con segnalazione pendente
         // se arriva tale notifica, la tab selezionata è la 2, cioè la MapView
-        let tabSelection = Binding(get: {
-            return $notificationManager.notificationType.wrappedValue == "proximity" ? 2 : 1
+        var  tabSelection = Binding(get: {
+            return $notificationManager.notificationType.wrappedValue == "proximity" ? Tab.Map : Tab.Reports
         }, set: {
             _ in
         })
-      
-        TabView(selection: tabSelection) {
+      VStack{
+        TabView(selection: $currentTab) {
             ReportListView()
-                .tabItem {
-                    Image(systemName: "megaphone.fill")
-                    Text("Reports")
-                }
-                .tag(1)
+                .tag(Tab.Reports)
             MapView()
-                .tabItem {
-                    Image(systemName: "map.fill")
-                    Text("Map")
-                }
-                .tag(2)
+                .tag(Tab.Map)
             StoreView()
-                .tabItem {
-                    Image(systemName: "cart.fill")
-                    Text("Store")
-                }
-                .tag(3)
+                .tag(Tab.Store)
             UserProfileView()
-                .tabItem {
-                    Image(systemName: "person.fill")
-                    Text("Profile")
-                }
-                .tag(4)
+                .tag(Tab.Profile)
         }
         // se l'utente si muove verifichiamo se è vicino ad un'area segnalata (entro un raggio)
         // se si, inviare una notifica
-        .onChange(of: locationManager.placeMark) {
+          
+          // Custom Tab Bar...
+          HStack(spacing: 0){
+              ForEach(Tab.allCases,id: \.self){tab in
+                  
+                  Button {
+                       currentTab = tab
+                  } label: {
+                    
+                      Image(systemName: tabBarIcon.getIcon(name: tab.rawValue))
+                          .resizable()
+                          .renderingMode(.template)
+                          .aspectRatio(contentMode: .fit)
+                          .frame(width: 22, height: 22)
+                          .background(
+                          
+                              Color("AccentColor")
+                                  .opacity(0.1)
+                                  .cornerRadius(5)
+                                  .blur(radius: 5)
+                                  .padding(-7)
+                                  .opacity(currentTab == tab ? 1 : 0)
+                              
+                          )
+                          .frame(maxWidth: .infinity)
+                          .foregroundColor(currentTab == tab ? Color("AccentColor") : Color.black.opacity(0.3))
+                  }
+              }
+          }
+          .padding([.horizontal,.top])
+          .padding(.bottom,10)
+      }
+      .onChange(of: locationManager.placeMark) {
             value in
             
             let allReports : [ReportModel] = [] //ReportApi().getAllReport()
@@ -79,4 +103,13 @@ struct TabNavigationView_Previews: PreviewProvider {
     static var previews: some View {
         TabNavigationView()
     }
+}
+
+enum Tab: String,CaseIterable{
+    
+    // Raw Value must be image Name in asset..
+    case Reports = "Reports"
+    case Map = "Map"
+    case Store = "Store"
+    case Profile = "Profile"
 }
