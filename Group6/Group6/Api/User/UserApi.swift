@@ -58,7 +58,7 @@ class UserApi{
     func getUserById(id:Int)->User{
         var semaphore = DispatchSemaphore (value: 0)
 
-        var request = URLRequest(url: URL(string: host+"ged-user-by-id/\(id)")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: host+"ged-user-by-id/\(41)")!,timeoutInterval: Double.infinity)
         request.addValue("JSESSIONID=7E7CBEB7D144D94D3C892751F419A2A8", forHTTPHeaderField: "Cookie")
 
         request.httpMethod = "GET"

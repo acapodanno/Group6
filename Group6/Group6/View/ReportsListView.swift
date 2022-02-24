@@ -54,7 +54,6 @@ struct ReportListView: View {
     
     struct SegCell : View {
         var segnalazione : ReportModel
-        let location = CLLocation(latitude: -22.963451, longitude: -43.198242)
         var body: some View {
             HStack(spacing: 15){
                         VStack(alignment: .leading, spacing: 8) {
@@ -74,14 +73,16 @@ struct ReportListView: View {
                                 .font(.custom(customFont, size: 13))
                                 .foregroundColor(Color(.white))
                         }
+                    Spacer()
+                Circle()
+                    .foregroundColor(Color(segnalazione.status.elementsEqual("STATUS_TAKEN") ? .yellow : (segnalazione.status.elementsEqual("STATUS_PENDING") ? .red : .green )))
+                    .frame(width: 20, height: 20)
+                    .padding()
                     }
                     .padding(.horizontal,10)
                     .padding(.vertical,10)
                     .frame(maxWidth: .infinity,alignment: .leading)
-                    .background(
-                    
-                        Color("AccentColor")
-                    )
+                    .background(Color("AccentColor"))
                     .cornerRadius(10)
         }
     }

@@ -84,7 +84,6 @@ struct TabNavigationView: View
       }
       .onChange(of: locationManager.placeMark) {
             value in
-            
             let allReports : [ReportModel] = ReportApi().getAllReport()
             let radius : Double = 100
             for rep in allReports {
