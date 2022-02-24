@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 struct User : Identifiable {
-    var id = UUID()
+    var id:Int
     var isOperator : Bool  //vero se è un operatore
     var userName : String  //nome utente
     var level : Int  //livello

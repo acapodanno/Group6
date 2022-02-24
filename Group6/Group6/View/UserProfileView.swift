@@ -9,8 +9,11 @@ import SwiftUI
 
 
 struct UserProfileView: View {
-    @State var user : User = User(isOperator: false, userName: "Francesca", level: 7, points: 102, profileImage: UIImage(named: "profile image")!, reportings: [])
-    
+    @State var user : User
+    var userApi:UserApi = UserApi()
+    init(){
+        self.user = userApi.getUserById(id: 1)
+    }
     var body: some View {
         NavigationView{
             Form {
@@ -36,10 +39,10 @@ struct UserProfileView: View {
 struct ProfileBar : View {
     @Binding var nomeUtente : String
     @Binding var user : User
-    
+
     var body : some View {
-        HStack {
-            Image(uiImage: user.profileImage)
+        HStack {  if let image = user.profileImage{
+            Image(uiImage: image)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 110, height: 110)
@@ -47,6 +50,20 @@ struct ProfileBar : View {
                 .overlay(Circle()
                             .stroke(Color.black, lineWidth: 4))
                 .padding()
+                
+            }else{
+                
+                Image(uiImage: UIImage(named: "profile image")!)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 110, height: 110)
+                    .clipShape(Circle())
+                    .overlay(Circle()
+                                .stroke(Color.black, lineWidth: 4))
+                    .padding()
+                    
+
+            }
             VStack {
                 Text(user.userName)
                     .font(.title)

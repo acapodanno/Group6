@@ -52,7 +52,31 @@ class UserApi{
 
         task.resume()
         semaphore.wait()
-        return User(isOperator: false, userName: "Shark73", level: 2, points: 50, profileImage: nil, reportings: [])
+        return User(id: 1,isOperator: false, userName: "Shark73", level: 2, points: 50, profileImage: nil, reportings: [])
+
+    }
+    func getUserById(id:Int)->User{
+        var semaphore = DispatchSemaphore (value: 0)
+
+        var request = URLRequest(url: URL(string: host+"ged-user-by-id/\(id)")!,timeoutInterval: Double.infinity)
+        request.addValue("JSESSIONID=7E7CBEB7D144D94D3C892751F419A2A8", forHTTPHeaderField: "Cookie")
+
+        request.httpMethod = "GET"
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+          guard let data = data else {
+            print(String(describing: error))
+            semaphore.signal()
+            return
+          }
+          print(String(data: data, encoding: .utf8)!)
+          semaphore.signal()
+        }
+
+        task.resume()
+        semaphore.wait()
+        
+        return User(id: 1,isOperator: false, userName: "Shark73", level: 2, points: 50, profileImage: nil, reportings: [])
 
     }
 

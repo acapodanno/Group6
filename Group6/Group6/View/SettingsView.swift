@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @State var isPresented : Bool = false
+
     @Binding var user : User
     var body: some View {
         NavigationView {
@@ -17,7 +18,9 @@ struct SettingsView: View {
                 Section (header: Text("Profile image")) {
                     HStack {
                         Spacer()
-                        Image(uiImage: user.profileImage)
+                        
+                        if let image = user.profileImage{
+                        Image(uiImage: image)
                             .resizable()
                             .scaledToFill()
                             .frame(width: 110, height: 110)
@@ -28,6 +31,23 @@ struct SettingsView: View {
                             .onTapGesture {
                                 isPresented = true  //quando si clicca sull'immagine si apre lo sheet col picker
                             }
+                            
+                        }else{
+                            
+                            Image(uiImage: UIImage(named: "profile image")!)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 110, height: 110)
+                                .clipShape(Circle())
+                                .overlay(Circle()
+                                            .stroke(Color.black, lineWidth: 4))
+                                .padding()
+                                .onTapGesture {
+                                    isPresented = true  //quando si clicca sull'immagine si apre lo sheet col picker
+                                }
+                                
+
+                        }
                         Spacer()
                     }
                 }
@@ -42,14 +62,14 @@ struct SettingsView: View {
             }
             .navigationTitle(Text("Profile Settings"))
             .sheet(isPresented: $isPresented) {
-                PhotoPicker(profileImage: $user.profileImage)
+                //PhotoPicker(profileImage: $user.profileImage?)
             }
         }
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
-    @State static var bibbi : User = User(isOperator: false, userName: "Francesca", level: 7, points: 102, profileImage: UIImage(named: "profile image")!, reportings: [])
+    @State static var bibbi : User = User(id: 1, isOperator: false, userName: "Francesca", level: 7, points: 102, profileImage: UIImage(named: "profile image")!, reportings: [])
     static var previews: some View {
         SettingsView(user: $bibbi)
     }
