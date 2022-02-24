@@ -9,10 +9,13 @@ import SwiftUI
 
 struct CouponDetailView: View {
     @State private var showingAlert = false
+    @State private var alertReason = ""
     @State private var couponAcquired = false
     @EnvironmentObject var couponS: CouponStore
     @StateObject var locationManager = LocationManager()
     var coupon: Coupon
+    
+    var user = UserApi().getUserById(id: UserDefaults.standard.integer(forKey: "userId"))
     
     var body: some View {
         NavigationView {
@@ -37,10 +40,18 @@ struct CouponDetailView: View {
                         Section (footer:
                                     HStack {
                             Spacer()
+                            
                             Button(action: {
-                                showingAlert = true
-                                couponAcquired = true
-                                // TODO: AGGIUNGERE SALVATAGGIO DEL COUPON NELLA SEZIONE "MY COUPONS" CON MODELLO REST
+                                if user.points >= coupon.cost {
+                                    showingAlert = true
+                                    alertReason = "acquired"
+                                    couponAcquired = true
+                                    // TODO: AGGIUNGERE SALVATAGGIO DEL COUPON NELLA SEZIONE "MY COUPONS" CON MODELLO REST
+                                }
+                                else {
+                                    showingAlert = true
+                                    alertReason = "error"
+                                }
                             }) {
                                 HStack {
                                     Image(systemName: "cart.fill")
@@ -55,21 +66,25 @@ struct CouponDetailView: View {
                             .buttonStyle(.borderedProminent)
                             .disabled(couponAcquired == true)
                             .alert(isPresented: $showingAlert) {
-                                Alert(title: Text("Purchase completed"), message: Text("You can find it in My Coupons section"), dismissButton: .default(Text("OK")))
-                                    }
-                            Spacer()
+                                if alertReason == "error" {
+                                    return Alert(title: Text("Error"), message: Text("You haven't got enough points to redeem this coupon"), dismissButton: .default(Text("Ok")))
+                                }
+                                else {
+                                    return Alert(title: Text("Purchase completed"), message: Text("You can find it in My Coupons section"), dismissButton: .default(Text("OK")))
+                                }
+                            }
                         }) {
                             EmptyView()
                         }
+                        
                     }
-                    
                 }
+                .navigationTitle("Coupon Details")
             }
-            .navigationTitle("Coupon Details")
         }
     }
+    
 }
-
 
 struct CouponDetailView_Previews: PreviewProvider {
     static var previews: some View {
@@ -77,4 +92,4 @@ struct CouponDetailView_Previews: PreviewProvider {
             .previewInterfaceOrientation(.portrait)
     }
 }
-
+    
