@@ -13,20 +13,17 @@ import AVFAudio
 
 struct ReportListView: View {
     
-    @State var segnalazioni:[ReportModel]
     var reportApi:ReportApi = ReportApi()
     @State var showingAddView = false
     @StateObject var locationManager = LocationManager()
-    init(){
-        self.segnalazioni = reportApi.getAllReport()
-    }
+    @EnvironmentObject var reportStore:ReportStore
     var body: some View {
         NavigationView{
             ScrollView(.vertical, showsIndicators: false){
                         // Displaying Products...
                         VStack(spacing: 15){
                             
-                            ForEach (segnalazioni){
+                            ForEach (reportStore.reportsList){
                                 segnalazione in
                                 NavigationLink(destination: ReportDetailView(report: segnalazione)){
                                 SegCell(segnalazione: segnalazione)
@@ -44,7 +41,7 @@ struct ReportListView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .sheet(isPresented: $showingAddView, onDismiss: {}) {
-            AddReportView()
+            AddReportView().environmentObject(reportStore)
         }
     }
 }

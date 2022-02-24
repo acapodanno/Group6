@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         Group{
             if log_Status{
-                TabNavigationView()
+                TabNavigationView(reportStore: ReportStore())
             } else{
                SplashScreen()
                 

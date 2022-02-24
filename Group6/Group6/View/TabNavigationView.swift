@@ -14,11 +14,13 @@ struct TabNavigationView: View
     @StateObject var locationManager = LocationManager()
     @Namespace var animation
     @State var currentTab: Tab = .Reports
+    @ObservedObject var reportStore:ReportStore
+
     var tabBarIcon: TabBarIcon = TabBarIcon()
     // Hiding Tab Bar...
-    init(){
-        UITabBar.appearance().isHidden = true
-    }
+//    init(){
+//        UITabBar.appearance().isHidden = true
+//    }
     var systemName = "megaphone.fill"
     
     var body: some View {
@@ -37,8 +39,10 @@ struct TabNavigationView: View
         TabView(selection: $currentTab) {
             ReportListView()
                 .tag(Tab.Reports)
+                .environmentObject(reportStore)
             MapView()
                 .tag(Tab.Map)
+                .environmentObject(reportStore)
             StoreView()
                 .tag(Tab.Store)
             UserProfileView()
@@ -101,7 +105,7 @@ struct TabNavigationView: View
 
 struct TabNavigationView_Previews: PreviewProvider {
     static var previews: some View {
-        TabNavigationView()
+        TabNavigationView(reportStore: ReportStore())
     }
 }
 

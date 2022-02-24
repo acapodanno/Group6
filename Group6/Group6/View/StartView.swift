@@ -31,7 +31,7 @@ struct StartView: View {
                     TextField("Username", text: $operUsername)
                     TextField("Password", text: $operPassword)
                     
-                    NavigationLink(isActive: isOperatorValid, destination: {TabNavigationView()}) {
+                    NavigationLink(isActive: isOperatorValid, destination: {TabNavigationView(reportStore: ReportStore())}) {
                         Button(action: {
                             operClicked = true
                             
@@ -47,7 +47,7 @@ struct StartView: View {
                     }
                 }
                 Section(footer:
-                            NavigationLink(isActive: $userSelected, destination: {TabNavigationView()}, label: {
+                            NavigationLink(isActive: $userSelected, destination: {TabNavigationView(reportStore: ReportStore())}, label: {
                     Button(action: {
                         userSelected = true
                     }) {

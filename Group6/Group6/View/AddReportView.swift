@@ -7,6 +7,7 @@ struct AddReportView: View {
     
     @StateObject var locationManager = LocationManager()
     var reportApi:ReportApi = ReportApi()
+    @EnvironmentObject var reportStore:ReportStore
     @State private var showingAlert = false
     @State var lastNoteValue : String = ""
     @State var note : String = ""
@@ -109,6 +110,7 @@ struct AddReportView: View {
             showingAlert.toggle()
        }else{
            reportApi.addReport(latitude: locationManager.placeMark?.location?.coordinate.latitude ?? 0, longitude: locationManager.placeMark?.location?.coordinate.longitude ?? 0, description: note,address:"\(locationManager.address)")
+           reportStore.restoreReportAll();
             presentationMode.wrappedValue.dismiss()
         }
     }
