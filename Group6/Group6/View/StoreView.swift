@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct StoreView: View {
-    
+    @EnvironmentObject var couponStore:CouponStore
+
     @State private var typeSelected = "Available Coupons"
     var types = ["Available Coupons", "My Coupons"]
     
-    @EnvironmentObject var couponStore = CouponStore()
     
     var body: some View {
         NavigationView {
@@ -26,12 +26,19 @@ struct StoreView: View {
                 
                 
                 List {
+                    if typeSelected == "Available Coupons" {
                     ForEach(couponStore.allCoupons) {ccoupon in
-                        if typeSelected == "Available Coupons" && !ccoupon.acquired || typeSelected == "My Coupons" && ccoupon.acquired {
+                      
                             NavigationLink(destination: {CouponDetailView(coupon: ccoupon)}) {
                                 CouponCell(coupon: ccoupon)
                             }.environmentObject(couponStore)
                         }
+                    }else{
+                        ForEach(couponStore.couponBuy) {ccoupon in
+                                NavigationLink(destination: {CouponDetailView(coupon: ccoupon)}) {
+                                    CouponCell(coupon: ccoupon)
+                                }.environmentObject(couponStore)
+                            }
                     }
                 }
                 .navigationTitle("Store")
