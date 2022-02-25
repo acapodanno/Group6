@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @State var isPresented : Bool = false
-
+    var userapi = UserApi()
     @Binding var user : User
     var body: some View {
         NavigationView {
@@ -56,7 +56,10 @@ struct SettingsView: View {
                 }
                 Section (header: Text("Operator")) {
                     HStack {
-                        Toggle("Are you an operator? ", isOn: $user.isOperator)
+                        Toggle("Are you an operator? ", isOn: $user.isOperator).onTapGesture{
+                            print("\(user.isOperator)")
+                            userapi.updateIsOperator()
+                        }
                     }
                 }
             }
