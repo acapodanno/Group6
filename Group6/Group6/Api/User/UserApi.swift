@@ -76,7 +76,7 @@ class UserApi{
         task.resume()
         semaphore.wait()
         
-        return User(id: 1,isOperator: true, userName: "Shark73", level: 2, points: 2, profileImage: nil, reportings: [])
+        return User(id: 1,isOperator: true, userName: "Shark73", level: 2, points: 102, profileImage: nil, reportings: [])
 
     }
 

@@ -30,7 +30,7 @@ struct StoreView: View {
                         if typeSelected == "Available Coupons" && !ccoupon.acquired || typeSelected == "My Coupons" && ccoupon.acquired {
                             NavigationLink(destination: {CouponDetailView(coupon: ccoupon)}) {
                                 CouponCell(coupon: ccoupon)
-                            }
+                            }.environmentObject(couponStore)
                         }
                     }
                 }
