@@ -15,6 +15,7 @@ struct TabNavigationView: View
     @Namespace var animation
     @State var currentTab: Tab = .Reports
     @ObservedObject var reportStore:ReportStore
+    @ObservedObject var couponStore:CouponStore
 
     var tabBarIcon: TabBarIcon = TabBarIcon()
     // Hiding Tab Bar...
@@ -45,6 +46,7 @@ struct TabNavigationView: View
                 .environmentObject(reportStore)
             StoreView()
                 .tag(Tab.Store)
+                .environmentObject(couponStore)
             UserProfileView()
                 .tag(Tab.Profile)
         }
@@ -105,7 +107,7 @@ struct TabNavigationView: View
 
 struct TabNavigationView_Previews: PreviewProvider {
     static var previews: some View {
-        TabNavigationView(reportStore: ReportStore())
+        TabNavigationView(reportStore: ReportStore(),couponStore: CouponStore())
     }
 }
 

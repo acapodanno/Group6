@@ -41,8 +41,12 @@ struct AddReportView: View {
                                     Button(action: {
                                         self.isImagePickerDisplay.toggle()
                                     }){
-                                        Image(systemName: "camera.circle").font(.title)
-                                            .padding(.all, 50.0)
+                                        Image(systemName: "plus.circle")//.font(.title)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 60, height: 70)
+                                            .padding(30)
+                                            //.padding(.all, 50.0)
                                     }
                                 }
                                 ForEach(imageArray, id: \.self) {selectedImage in

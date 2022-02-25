@@ -12,7 +12,9 @@ struct ReportDetailView: View {
     
     @State var imageArray : [UIImage?] = []
     @StateObject var lum = LoginPageModel()
+    @EnvironmentObject var reportStore : ReportStore
     var report : ReportModel
+    
     var loggedUser = UserApi().getUserById(id: UserDefaults.standard.integer(forKey: "userId"))
     
     var body: some View {
@@ -59,12 +61,18 @@ struct ReportDetailView: View {
                     
                     Section(footer:
                                 VStack {
-                        Button(action: {}) {
+                        Button(action: {
+                            ReportApi().updateStatuTakenReport(id: report.id)
+                            reportStore.restoreReportAll()
+                        }) {
                             Text("Mark as taken")
                                 .frame(maxWidth: .infinity)
                         }
                         .buttonStyle(.borderedProminent)
-                        Button(action: {}) {
+                        Button(action: {
+                            ReportApi().updateStatuSolvedReport(id: report.id)
+                            reportStore.restoreReportAll()
+                        }) {
                             Text("Mark as solved")
                                 .frame(maxWidth: .infinity)
                         }

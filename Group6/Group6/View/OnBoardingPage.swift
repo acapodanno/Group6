@@ -13,12 +13,14 @@ let customFont = "Raleway-Regular"
 
 struct OnBoardingPage: View {
     // Showing Login Page...
-    @State var showLoginPage: Bool = true
+    @State var showLoginPage: Bool = false
+    @StateObject var loginData: LoginPageModel = LoginPageModel()
+
     var body: some View {
         
         VStack(alignment: .leading){
             
-            Text("Report \nTrash")
+            Text("Welcome to \nTrash Radar")
                 .font(.custom(customFont, size: 55))
                 .fontWeight(.bold)
                 .foregroundColor(Color("AccentColor"))
@@ -30,6 +32,7 @@ struct OnBoardingPage: View {
             Button {
                 withAnimation{
                     showLoginPage = true
+                    loginData.Login()
                 }
             } label: {
              
@@ -59,8 +62,7 @@ struct OnBoardingPage: View {
         
             Group{
                 if showLoginPage{
-                    LoginPage()
-                        .transition(.move(edge: .bottom))
+                
                 }
             }
         )

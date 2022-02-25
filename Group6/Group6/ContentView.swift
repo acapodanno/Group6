@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         Group{
             if log_Status{
-                TabNavigationView(reportStore: ReportStore())
+                TabNavigationView(reportStore: ReportStore(),couponStore: CouponStore())
             } else{
                SplashScreen()
                 
@@ -38,7 +38,7 @@ struct SplashScreen: View{
     
     @Environment(\.colorScheme) var scheme
     
-    @State var removeSplashScreen: Bool = false
+    @State var removeSplashScreen: Bool = true
     
     var body: some View{
         
