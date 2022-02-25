@@ -12,7 +12,7 @@ struct StoreView: View {
     @State private var typeSelected = "Available Coupons"
     var types = ["Available Coupons", "My Coupons"]
     
-    @StateObject var couponStore = CouponStore()
+    @EnvironmentObject var couponStore = CouponStore()
     
     var body: some View {
         NavigationView {
