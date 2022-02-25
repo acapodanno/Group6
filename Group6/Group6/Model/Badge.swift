@@ -19,8 +19,8 @@ struct Badge : Identifiable {
 
 
 var badges : [Badge] = [
-    Badge(name: "First report", requiredPoints: 1, image: UIImage(systemName: "1.circle")!),
-    Badge(name: "First report resolved", requiredPoints: 1, image: UIImage(systemName: "network")!),
-    Badge(name: "Five reports", requiredPoints: 20, image: UIImage(systemName: "goforward.5")!),
-    Badge(name: "Report afetr midnight", requiredPoints: 1, image: UIImage(systemName: "clock.fill")!)
+    Badge(name: "First report", requiredPoints: 1, image: UIImage(named: "Badge1")!),
+    Badge(name: "First report resolved", requiredPoints: 1, image: UIImage(named: "Badge3")!),
+    Badge(name: "Five reports", requiredPoints: 20, image: UIImage(named: "Badge2")!),
+    Badge(name: "Multiple reports", requiredPoints: 1, image: UIImage(named: "Badge4")!)
 ]
