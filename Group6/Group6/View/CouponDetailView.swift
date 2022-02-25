@@ -47,6 +47,7 @@ struct CouponDetailView: View {
                                     alertReason = "acquired"
                                     couponAcquired = true
                                     // TODO: AGGIUNGERE SALVATAGGIO DEL COUPON NELLA SEZIONE "MY COUPONS" CON MODELLO REST
+                                    couponS.updateAcquired(id: coupon.id)
                                 }
                                 else {
                                     showingAlert = true

@@ -27,7 +27,7 @@ struct ReportListView: View {
                                 segnalazione in
                                 NavigationLink(destination: ReportDetailView(report: segnalazione)){
                                 SegCell(segnalazione: segnalazione)
-                                }
+                                }.environmentObject(reportStore)
                         }
                         .padding(.top,25)
                         .padding(.horizontal)
